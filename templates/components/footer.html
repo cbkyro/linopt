@@ -1,0 +1,29 @@
+
+<footer class="main-footer">
+  {{#if settings.show_newsletter_box}}
+    {{> components/footer/newsletter-action}}
+  {{/if}}
+  {{> components/common/banners/bottom}}
+
+  <div class="footer-container">
+    <div class="layout-container">
+      <div class="footer-navigation">
+        {{> components/footer/footer-navigation}}
+        <a href="#" class="footer-back-to-top" data-scroll-top>
+          <svg role="img">
+            <use xlink:href="#icon-arrow"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="layout-container">
+      <div class="footer-interaction">
+        {{> components/footer/footer-attribution}}
+        {{> components/footer/payment-icons}}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{{> components/header/drawer-menu}}

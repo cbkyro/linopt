@@ -1,0 +1,14 @@
+
+<div class="dropdown-menu-column">
+  <ul>
+    <li class="dropdown-column-header">
+      <a href="{{url}}">{{name}}</a>
+    </li>
+
+    {{#if children}}
+      {{#each children}}
+        {{> components/header/link-partial this li-class='mega-menu-item'}}
+      {{/each}}
+    {{/if}}
+  </ul>
+</div>

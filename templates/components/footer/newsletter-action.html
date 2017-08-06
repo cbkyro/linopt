@@ -1,0 +1,15 @@
+<section class="footer-newsletter">
+  <h1 class="show-for-sr">{{lang 'newsletter_form.heading'}}</h1>
+  <div class="layout-container">
+    <form class="footer-newsletter-form" action="{{urls.subscribe.action}}" data-validated-form method="post">
+      <input type="hidden" name="nl_first_name" value="bc">
+      <input type="hidden" name="action" value="subscribe">
+      <input type="hidden" name="check" value="1">
+
+      {{> core/forms/common/email id='nl_email' name='nl_email' label=(lang 'forms.newsletter.email') prefill=(lang 'forms.newsletter.placeholder') required=true value=customer.email}}
+      <div class="form-action">
+        <input type="submit" class="button button-wide" value="{{lang 'newsletter_form.submit_form'}}">
+      </div>
+    </form>
+  </div>
+</section>

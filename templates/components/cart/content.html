@@ -1,0 +1,85 @@
+
+<div class="cart-item-header cart-item-row">
+  <div class="cart-item-cell cart-item-product"><span>{{lang 'cart.product'}}</span></div>
+  <div class="cart-item-cell cart-item-quantity"><span>{{lang 'cart.quantity'}}</span></div>
+  <div class="cart-item-cell cart-item-total"><span>{{lang 'cart.total'}}</span></div>
+  <div class="cart-item-cell cart-item-action"><span>{{lang 'cart.action'}}</span></div>
+</div>
+
+{{#each cart.items}}
+  <article data-cart-item data-item-id="{{id}}" class="cart-item-row">
+    <div class="cart-item-cell cart-item-product {{#if gift_wrapping}}has-giftwrap{{/if}}">
+      <div class="cart-item-thumbnail" style="background-image: url({{getImage image '1024' (cdn ../theme_settings.default_image)}})">
+        {{#if image}}
+          <img class="show-for-sr" src="{{getImage image 'thumbnail'}}" alt="{{image.alt}}">
+        {{/if}}
+      </div>
+
+      <div class="cart-item-info">
+
+        <div class="cart-item-block">
+          {{#if brand.name}}
+            <span class="cart-item-brand">{{brand.name}}</span>
+          {{/if}}
+
+          {{#if url}}
+            <a class="cart-item-title" href="{{url}}">{{name}}</a>
+          {{else}}
+            {{#if edit_url}}
+              <a class="cart-item-title" href="{{edit_url}}">{{name}}</a>
+            {{else}}
+              <span class="cart-item-title no-link">{{name}}</span>
+            {{/if}}
+          {{/if}}
+        </div>
+
+        {{#if event_date}}
+          <div class="cart-item-block">
+            {{lang 'cart.delivery_date' text=event_date.name date=event_date.date}}
+          </div>
+        {{/if}}
+
+        {{#if options}}
+          <div class="cart-item-block cart-item-option-list">
+            {{#each options}}
+              {{> components/cart/content/options-configurable}}
+            {{/each}}
+          </div>
+        {{/if}}
+
+        {{#if configurable_fields}}
+          <div class="cart-item-block">
+            {{#each configurable_fields}}
+              {{> components/cart/content/options-configurable}}
+            {{/each}}
+          </div>
+        {{/if}}
+
+        <div class="cart-item-block cart-item-giftwrap">
+          {{> components/cart/giftwrap-item this}}
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-item-cell cart-item-quantity">
+      {{> components/common/quantity this}}
+    </div>
+
+    <div class="cart-item-cell cart-item-total">
+      <span class="cart-item-accent price {{#if total_discounted}}price-discounted{{/if}}">
+        {{total.formatted}}
+      </span>
+      {{#if total_discounted}}
+        <span class="cart-item-accent price">{{total_discounted.formatted}}</span>
+      {{/if}}
+    </div>
+
+    <div class="cart-item-cell cart-item-action">
+      <a class="cart-item-remove" href="{{remove_url}}" data-cart-item-remove>
+        <svg role="presentation"><use xlink:href="#icon-close-thin"></use></svg>
+      </a>
+    </div>
+  </article>
+{{/each}}
+
+{{{snippet 'cart'}}}

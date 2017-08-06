@@ -1,0 +1,47 @@
+
+{{#if settings.show_product_reviews}}
+  <section class="tab-content-panel product-tabs-panel product-reviews" id="product-tab-reviews">
+    <header class="product-column-header">
+      <h1 class="product-column-heading review-header">
+        <span class="review-header-text">
+          {{lang 'product.reviews.heading'}}
+        </span>
+
+        <span class="review-header-information">
+          {{#if settings.show_product_rating}}
+            {{> components/common/rating-stars rating=product.rating star_size="medium"}}
+            {{{snippet 'product_rating'}}}
+          {{/if}}
+
+          {{#if settings.show_product_reviews}}
+            {{#if settings.show_product_rating}}
+              <span class="review-count">
+                {{{lang 'product.reviews.total_based_on' score=product.rating numReviews=product.num_reviews}}}
+              </span>
+            {{/if}}
+
+            <a href="#modal-review-form" class="review-link">
+              {{lang 'product.reviews.write_review'}}
+            </a>
+          {{/if}}
+        </span>
+      </h1>
+    </header>
+
+    {{{snippet 'reviews'}}}
+
+    {{#if product.num_reviews '>' 0}}
+      {{#each product.reviews.list}}
+        {{> components/reviews/review-item show_product_rating=../settings.show_product_rating}}
+      {{/each}}
+      {{#if product.num_reviews '>' 10 }}
+        <div class="product-column-row" id="product-reviews-load-more">
+          <a href="{{{../../pagination.reviews.next}}}" class="button secondary button-large" data-load-more-reviews>{{lang 'product.reviews.load_review'}}</a>
+        </div>
+      {{/if}}
+    {{else}}
+      <p>{{lang 'product.reviews.no_reviews_message'}}</p>
+    {{/if}}
+
+  </section>
+{{/if}}

@@ -1,0 +1,31 @@
+<section class="carousel
+  {{#if theme_settings.carousel-transition '===' 'slide-transition'}}slide-transition{{else}}fade-transition{{/if}}
+  {{#if carousel.slides.length '>' 1}}display-controls{{/if}}">
+
+  <div class="carousel-slides" data-carousel-slides>
+    {{#each carousel.slides}}
+      <figure class="carousel-item">
+        <a class="carousel-item-image" href="{{#if url}}{{url}}{{else}}#{{/if}}">
+          <img src="{{image}}" {{#if alt_text}}alt="{{{alt_text}}}"{{/if}} />
+        </a>
+
+        {{#any heading text button_text}}
+          <figcaption class="carousel-item-info">
+            {{#if heading}}
+              <h2 class="carousel-item-heading">{{{heading}}}</h2>
+            {{/if}}
+
+            {{#if text}}
+              <p class="carousel-item-description">{{{text}}}</p>
+            {{/if}}
+
+            {{#if button_text}}
+              <a class="carousel-item-button button" href="{{#if url}}{{url}}{{else}}#{{/if}}">{{{button_text}}}</a>
+            {{/if}}
+          </figcaption>
+        {{/any}}
+      </figure>
+    {{/each}}
+  </div>
+
+</section>

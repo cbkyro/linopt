@@ -1,0 +1,43 @@
+---
+category:
+  products:
+    limit: {{theme_settings.products-per-page}}
+  shop_by_price: true
+shop_by_brand: true;
+---
+
+{{#partial "masthead"}}
+  {{> components/common/collections/banner image=category.image heading=category.name text=category.description}}
+{{/partial}}
+
+{{#partial "page"}}
+
+  {{> components/breadcrumbs breadcrumbs}}
+
+  <section class="collection-page" data-faceted-search>
+    <header class="collection-header">
+      <div class="collection-navigation" data-collection-sort>
+        {{> components/category/header}}
+      </div>
+
+      {{#if theme_settings.collection-enable-filters}}
+        <div class="collection-filter" data-collection-facets>
+          {{> components/category/sidebar}}
+        </div>
+      {{/if}}
+    </header>
+
+    <div class="collection-products">
+      <div class="layout-container" data-collection data-compare-wrapper>
+        {{> components/category/product-listing}}
+      </div>
+    </div>
+
+    <footer class="collection-footer" data-collection-footer>
+      {{> components/category/footer}}
+    </footer>
+  </section>
+
+{{/partial}}
+
+{{> layout/base}}

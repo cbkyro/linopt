@@ -1,0 +1,28 @@
+<div class="collection-facet-list-wrapper" data-facet-filter-wrapper>
+  <ul
+    data-facet-name="{{facet}}"
+    data-count="{{items_count}}"
+    data-has-more-results="{{has_more_results}}">
+
+    {{#if items}}
+      {{#each items}}
+        <li class="collection-facet-list-item {{#if @index '>=' 5}}hidden{{/if}} {{#if selected}}is-active{{/if}}" data-facet-item>
+          <a href="{{#if remove_url}}{{remove_url}}{{else}}{{url}}{{/if}}" data-faceted-search-facet rel="nofollow">
+            {{title}}
+
+            {{#if ../../show_product_counts}}
+              <span data-facet-item-count>
+                ({{count}})
+              </span>
+            {{/if}}
+          </a>
+        </li>
+      {{/each}}
+    {{else}}
+      <li>{{lang 'faceted_search.empty_facet'}}</li>
+    {{/if}}
+
+  </ul>
+
+   {{> components/faceted-search/facets-additional-toggle}}
+</div>

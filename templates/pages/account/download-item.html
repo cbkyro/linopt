@@ -1,0 +1,17 @@
+
+{{#partial "page"}}
+
+  <article class="page-container account-page">
+    <header class="block-header">
+      <h1 class="page-title">{{lang 'core.account.download.heading' number=downloads.order_id name=downloads.product_name}}</h1>
+    </header>
+    <div class="block-content">
+      <div class="page-content">
+        {{> core/account/download-item}}
+      </div>
+    </div>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

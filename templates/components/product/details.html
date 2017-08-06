@@ -1,0 +1,19 @@
+
+<div class="product-details" data-product-details data-product-title="{{product.title}}">
+  {{#if show-breadcrumbs}}
+    {{> components/breadcrumbs breadcrumbs}}
+  {{/if}}
+
+  <div class="layout-container">
+    <div class="product-column-left">
+      {{> components/product/product-columns/images default_image=theme_settings.default_image}}
+    </div>
+    <div class="product-column-right">
+      {{> components/product/product-columns/purchase schema_org=schema_org}}
+    </div>
+  </div>
+</div>
+
+{{#unless hide-tabs}}
+  {{> components/product/product-columns/tabs}}
+{{/unless}}

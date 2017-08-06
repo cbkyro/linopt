@@ -1,0 +1,18 @@
+
+{{> components/common/modal-close}}
+
+<div class="modal-body">
+  <div class="quickshop-messages" data-quickshop-messages></div>
+  <div class="product-details" data-quickshop-details data-product-title="{{product.title}}">
+    <div class="product-column-left">
+      {{#if product.images.length}}
+        {{> components/product/product-columns/images}}
+      {{else}}
+        <img class="product-slideshow-image no-image" src="{{cdn theme_settings.default_image}}" alt="{{lang 'product.no_image'}}">
+      {{/if}}
+    </div>
+    <div class="product-column-right">
+      {{> components/product/product-columns/purchase schema_org=false quickshop=true}}
+    </div>
+  </div>
+</div>

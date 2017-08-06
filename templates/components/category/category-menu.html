@@ -1,0 +1,10 @@
+
+{{#if category.subcategories }}
+  <ul>
+    {{#each category.subcategories}}
+      <li>
+        <a href="{{url}}">{{name}}</a>
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

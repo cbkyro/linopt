@@ -1,0 +1,47 @@
+<article class="blog-item">
+  <header class="blog-item-header">
+    {{#if thumbnail}}
+      <a
+        class="blog-item-featured-image"
+        href="{{url}}"
+        style="background-image: url({{getImage thumbnail '1280x650'}})">
+        <img class='show-for-sr' src="{{getImage thumbnail '1280x650'}}" alt="{{thumbnail.alt}}">
+      </a>
+    {{/if}}
+
+    <h4 class="blog-item-title">
+      <a href="{{url}}">{{limit title 300}}{{#if title.length '>' 300}}&hellip;{{/if}}</a>
+    </h4>
+
+    <div class="blog-item-header-caption">
+      <time class="blog-item-posted-date">{{date_published}}</time>
+
+      {{#if author}}
+        <span class="blog-item-author">{{lang 'blog.posted_by' author=author}}</span>
+      {{/if}}
+    </div>
+  </header>
+
+  {{#if summary}}
+    <div class="blog-item-content">
+      {{{summary}}}{{#if summary.length ">=" 150}}&hellip;{{/if}}
+
+      <div class="blog-item-actions">
+        {{#if this.tags}}
+          <div class="blog-item-tags">
+            <span class="blog-item-tags-label">{{lang 'blog.tags'}}</span>
+            <ul class="blog-item-tags-list">
+              {{#each tags}}
+                <li class="blog-item-tag">
+                  <a href="{{url}}">#{{name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        {{/if}}
+
+        <a class="button secondary button-large" href="{{url}}">{{lang 'blog.read_more'}}</a>
+      </div>
+    </div>
+  {{/if}}
+</article>

@@ -1,0 +1,125 @@
+<section class="navigation-wrap" data-mobile-nav-wrapper>
+  <nav class="mobile-nav-wrap">
+    <header>
+      <h1 class="show-for-sr">{{lang 'header.search_in' name=settings.store_name}}</h1>
+
+      <form class="mobile-search" action="{{urls.search}}" data-validated-form-search-mobile>
+        <button type="submit" class="mobile-search-submit">
+          <svg class="search-submit-icon" role="img">
+            <use xlink:href="#icon-search"></use>
+          </svg>
+          <span class="show-for-sr">{{lang 'search.submit'}}</span>
+        </button>
+
+        {{> core/forms/common/text prefill=(lang 'search.mobile_field') label=(lang 'search.mobile_field') id='search-mobile-field' name='search_query_adv' value=forms.search.query required=true}}
+      </form>
+
+      <div class="mobile-header-buttons">
+        <a href="{{urls.cart}}" class="button">
+           {{lang 'header.mobile_menu.navigate_links.cart'}}
+        </a>
+        <a href="{{urls.checkout_single_address}}" class="button">
+          {{lang 'header.mobile_menu.navigate_links.checkout'}}
+        </a>
+      </div>
+    </header>
+
+    <ul class="mobile-nav">
+      <li class="nav-menu-item has-children">
+        <a href="#">
+          {{lang 'header.mobile_menu.navigate_links.collections'}}
+        </a>
+
+        {{> components/header/submenu-button}}
+        <ul class="submenu">
+          {{#each categories}}
+            {{> components/header/link-partial-nested this submenu=true nested-li-class='nav-menu-item' li-class='submenu-item nav-menu-item'}}
+          {{/each}}
+        </ul>
+      </li>
+
+      {{#if pages}}
+        <li class="nav-menu-item has-children">
+          <a href="#">
+            {{lang 'header.mobile_menu.navigate_links.pages'}}
+          </a>
+
+          {{> components/header/submenu-button}}
+          <ul class="submenu">
+            {{#each pages}}
+              {{> components/header/link-partial-nested this submenu=true nested-li-class='nav-menu-item' li-class='nav-menu-item'}}
+            {{/each}}
+          </ul>
+        </li>
+      {{/if}}
+
+      {{#all theme_settings.header-enable-blog settings.blog_enabled}}
+        {{#if blog.name.length ">" 0}}
+          <li class="nav-menu-item">
+            <a href="{{blog.url}}">
+              {{blog.name}}
+            </a>
+          </li>
+        {{/if}}
+      {{/all}}
+
+      {{#any settings.account_creation_enabled settings.gift_certificates_enabled}}
+        <li class="nav-menu-item has-children">
+          <a href="#">
+            {{lang 'header.mobile_menu.account_title'}}
+          </a>
+
+          {{> components/header/submenu-button}}
+          <ul class="submenu">
+            {{#if settings.account_creation_enabled}}
+              {{#unless customer.id}}
+                <li>
+                  <a href="{{urls.auth.login}}">{{lang 'header.mobile_menu.account_links.sign_in'}}</a>
+                </li>
+              {{else}}
+                <li>
+                  <a href="{{urls.account.index}}">{{lang 'header.mobile_menu.account_links.account'}}</a>
+                </li>
+                <li>
+                  <a href="{{urls.auth.logout}}">{{lang 'header.mobile_menu.account_links.logout'}}</a>
+                </li>
+              {{/unless}}
+              {{#if settings.show_wishlist}}
+                <li>
+                  <a href="{{urls.account.wishlists.all}}">{{lang 'header.mobile_menu.account_links.wishlists'}}</a>
+                </li>
+              {{/if}}
+              <li>
+                <a href="{{urls.account.returns}}">{{lang 'header.mobile_menu.account_links.returns'}}</a>
+              </li>
+            {{/if}}
+            {{#if settings.gift_certificates_enabled}}
+              <li>
+                <a href="{{urls.gift_certificate.purchase}}">{{lang 'header.mobile_menu.account_links.gift_certificates'}}</a>
+              </li>
+            {{/if}}
+          </ul>
+        </li>
+      {{/any}}
+
+      {{#if currency_selector.currencies.length ">" 1}}
+        <li class="nav-menu-item has-children">
+          <a href="#">
+            {{{currency_selector.active_currency_name}}}
+          </a>
+
+          {{> components/header/submenu-button}}
+          <ul class="submenu">
+            {{#each currency_selector.currencies}}
+              {{#unless is_active}}
+                <li>
+                  <a href="{{switch_url}}">{{{name}}}</a>
+                </li>
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </li>
+      {{/if}}
+    </ul>
+  </nav>
+</section>

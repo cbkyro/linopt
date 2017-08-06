@@ -1,0 +1,75 @@
+<div id="modal-review-form">
+  {{> components/common/modal-close href="modal-review-form" data="data-review-close"}}
+
+  <div class="modal-body">
+    {{#each product.reviews.messages}}
+      {{#if error '===' ''}}
+        {{> core/alerts/alert-error message=(lang 'forms.validation.all_fields')}}
+      {{else}}
+        {{#if error}}
+          {{> core/alerts/alert-error message=error dismissable=true}}
+        {{/if}}
+      {{/if}}
+    {{/each}}
+
+    <header class="modal-header">
+      <h3 class="modal-heading review-form-heading">
+        {{lang 'product.reviews.write_review'}}
+      </h3>
+
+      {{!-- TODO: Enable if able to add WYSIWYG texts through the CP
+      <p>{{{lang 'product.reviews.write_review_description'}}}</p>--}}
+    </header>
+
+    <form class="form" id="form-leave-a-review" action="{{urls.product.post_review}}" method="post">
+      <div class="modal-form-contents">
+        {{!-- Clickable Stars --}}
+        <div class="form-field input-stars-wrapper">
+          <div class="form-label-text">
+            {{lang 'product.reviews.rating_label'}}
+          </div>
+          <fieldset class="input-stars form-fieldset">
+            {{> components/reviews/input-star rating_number=5}}
+            {{> components/reviews/input-star rating_number=4}}
+            {{> components/reviews/input-star rating_number=3}}
+            {{> components/reviews/input-star rating_number=2}}
+            {{> components/reviews/input-star rating_number=1}}
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="modal-form-contents">
+        {{!-- Name --}}
+        {{> core/forms/common/text id='rating-name' name='revfromname' label=(lang 'product.reviews.form.name') prefill=(lang 'product.reviews.form.your_name') required=true value=customer.name}}
+
+        {{!-- Email --}}
+        {{> core/forms/common/email id='rating-email' name='email' label=(lang 'product.reviews.form.email') prefill=(lang 'product.reviews.form.your_email') required=true value=customer.email}}
+
+        {{!-- Subject --}}
+        {{> core/forms/common/text id='rating-title' name='revtitle' label=(lang 'product.reviews.form.subject') prefill=(lang 'product.reviews.form.your_subject') required=true}}
+
+        {{!-- Comments --}}
+        {{> core/forms/common/multiline id='rating-comment' name='revtext' label=(lang 'product.reviews.form.comments') prefill=(lang 'product.reviews.form.comments') required=true validation_message=(lang 'forms.validation.required_comment')}}
+
+        {{!-- Captcha --}}
+        {{#if product.reviews.recaptcha}}
+          <div class="form-field form-field-review-captcha">
+            {{{product.reviews.recaptcha.markup}}}
+          </div>
+        {{/if}}
+      </div>
+
+      <footer class="modal-footer">
+        <input type="hidden" name="product_id" value="{{product.id}}"/>
+        <input type="hidden" name="action" value="post_review"/>
+        {{#if product.reviews.throttleToken}}
+          <input type="hidden" name="throttleToken" value="{{product.reviews.throttleToken}}">
+        {{/if}}
+
+        <input type="submit" class="form-submit button button-wide button-large" value="{{lang 'product.reviews.form.submit'}}">
+      </footer>
+    </form>
+  </div>
+
+</div>
+</div>

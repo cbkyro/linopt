@@ -1,0 +1,20 @@
+
+<li class="{{#if children}}has-children{{/if}} {{#if li-class}}{{li-class}}{{/if}}">
+  <a href="{{url}}">{{name}}</a>
+  {{#if children}}
+    {{#if submenu}}
+      {{> components/header/submenu-button}}
+    {{/if}}
+
+    <ul {{#if submenu}}class="submenu {{#if ../ul-class}}{{ul-class}}{{/if}}"{{/if}}>
+      {{#each children}}
+        {{> components/header/link-partial-nested this
+          ul-class=../ul-class
+          li-class=(concat ../nested-li-class " submenu-item")
+          nested-li-class=../nested-li-class
+          submenu=../submenu
+        }}
+      {{/each}}
+    </ul>
+  {{/if}}
+</li>

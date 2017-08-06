@@ -1,0 +1,1 @@
+{"components/category/category-menu":"\n{{#if category.subcategories }}\n  <ul>\n    {{#each category.subcategories}}\n      <li>\n        <a href=\"{{url}}\">{{name}}</a>\n      </li>\n    {{/each}}\n  </ul>\n{{/if}}\n"}

@@ -1,0 +1,7 @@
+{{#all product_results.faceted_search_enabled theme_settings.collection-enable-filters}}
+  {{> components/faceted-search/facets-toggle}}
+{{/all}}
+
+{{#if product_results.products}}
+  {{> components/common/collections/sort-by sort=pagination.product_results.sort}}
+{{/if}}

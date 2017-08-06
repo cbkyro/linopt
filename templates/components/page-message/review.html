@@ -1,0 +1,7 @@
+{{#if settings.show_product_reviews}}
+  {{#each product.reviews.messages}}
+    {{#if success}}
+      {{> core/alerts/alert-success message=success dismissable=true}}
+    {{/if}}
+  {{/each}}
+{{/if}}

@@ -1,0 +1,10 @@
+
+<div class="collection-sortby">
+  {{#if theme_settings.collection-enable-filters}}
+    {{> components/faceted-search/facets-toggle}}
+  {{/if}}
+    
+  {{#if brand.products}}
+    {{> components/common/collections/sort-by sort=pagination.brand.sort}}
+  {{/if}}
+</div>

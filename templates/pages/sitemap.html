@@ -1,0 +1,24 @@
+
+{{#partial "page"}}
+
+{{!> components/breadcrumbs breadcrumbs}}
+
+<article class="module-page-container layout-container sitemap-page">
+  <header class="block-header">
+    <h1 class="page-title">{{lang 'sitemap.heading'}}</h1>
+  </header>
+  <div class="block-content">
+
+    {{#each sitemap}}
+      <section class="sitemap-group">
+        <h1 class="sitemap-title">{{title}}</h1>
+        {{> components/sitemap/group items=body}}
+      </section>
+    {{/each}}
+
+  </div>
+</article>
+
+{{/partial}}
+
+{{> layout/base}}

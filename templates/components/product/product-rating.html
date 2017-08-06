@@ -1,0 +1,16 @@
+<!--
+
+  Readonly star ratings
+
+  {{> components/product/product-rating rating=this.product.rating total=this.product.num_reviews}}
+
+-->
+
+
+<div class="product-rating">
+  <div class="rating-stars-readonly" aria-hidden="true">
+    {{> components/common/rating-stars rating=rating}}
+  </div>
+  <span class="rating-total-score">{{this.rating}}</span>
+  <span class="rating-total-votes">(<a href="#">{{this.total}}</a>)</span>
+</div>

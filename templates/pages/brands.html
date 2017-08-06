@@ -1,0 +1,30 @@
+---
+brands:
+  limit: {{theme_settings.brand-count}}
+---
+{{#partial "page"}}
+
+  <article class="module-page-container layout-container">
+    <header class="block-header">
+      <h1 class="page-title">{{lang 'brands.heading'}}</h1>
+    </header>
+    <div class="block-content">
+      <ul class="brands-page-link">
+        {{#each brands}}
+          <li>
+            <a href="{{url}}" title="{{{name}}}">{{{name}}}</a>
+          </li>
+        {{/each}}
+      </ul>
+
+      {{#if pagination.brands}}
+        <div class="block-footer">
+          {{> components/common/pagination pagination.brands}}
+        </div>
+      {{/if}}
+    </div>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

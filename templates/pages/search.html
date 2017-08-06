@@ -1,0 +1,46 @@
+---
+product_results:
+  limit: {{theme_settings.products-per-page}}
+---
+
+{{#partial "masthead"}}
+  {{> components/search/masthead}}
+{{/partial}}
+
+{{#partial "page"}}
+
+  {{> components/breadcrumbs breadcrumbs}}
+
+  <section class="page-container search-page collection-page">
+    <div class="collection-header">
+      <div class="collection-navigation">
+        <div class="collection-navigation-list">
+          {{> components/search/header-tabs}}
+        </div>
+
+        <div class="collection-sortby" data-collection-sort>{{> components/search/header-sort}}</div>
+      </div>
+
+      {{#if theme_settings.collection-enable-filters}}
+        <div class="collection-filter" data-collection-facets>
+          {{> components/search/sidebar}}
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="tab-content search-results">
+      {{> components/loading-tab}}
+
+      <div class="tab-content-panel search-results-products" id="search-results-products">
+        {{> components/search/products}}
+      </div>
+      <div class="tab-content-panel search-results-information {{#unless content_results}}no-content-results{{/unless}}" id="search-results-information">
+        {{> components/search/information}}
+      </div>
+    </div>
+
+  </section>
+
+{{/partial}}
+
+{{> layout/base}}

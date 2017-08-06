@@ -1,0 +1,36 @@
+---
+blog:
+  posts:
+    limit: 5
+    summary: {{theme_settings.card-excerpt-length}}
+---
+
+{{#partial "page"}}
+
+  {{> components/breadcrumbs breadcrumbs}}
+
+  <section class="page-container blog-page">
+    <header class="block-header">
+      <h1 class="page-title">{{blog.name}}</h1>
+    </header>
+    <div class="page-content">
+      <div class="blog-column-articles">
+        {{#if blog.posts}}
+          {{#each blog.posts}}
+            {{> components/blog/blog-item this}}
+          {{/each}}
+        {{else}}
+          <div class="blog-item">
+            <p>{{lang 'blog.empty'}}</p>
+          </div>
+        {{/if}}
+
+        {{#if pagination.blog}}
+          {{> components/common/pagination pagination.blog}}
+        {{/if}}
+      </div>
+    </div>
+  </section>
+{{/partial}}
+
+{{> layout/base}}

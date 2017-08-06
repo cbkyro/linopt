@@ -1,0 +1,17 @@
+
+{{#partial "page"}}
+
+  <article class="page-container account-page">
+    <header class="block-header">
+      <h1 class="page-title">{{lang 'core.invoice.for_order' name=settings.store_name id=order.id}}</h1>
+    </header>
+    <div class="block-content">
+      <div class="page-content">
+        {{> core/account/orders/invoice}}
+      </div>
+    </div>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

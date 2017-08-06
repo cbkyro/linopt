@@ -1,0 +1,1 @@
+{"components/common/banners/bottom":"\n{{#if banners.bottom.length}}\n  <div class=\"banner-wrapper-bottom\">\n    <div class=\"layout-container rte\">\n      {{#each banners.bottom}}\n        {{{this}}}\n      {{/each}}\n    </div>\n  </div>\n{{/if}}\n"}

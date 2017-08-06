@@ -1,0 +1,1 @@
+{"components/header/link-partial":"\n<li {{#if li-class}}class=\"{{li-class}}\"{{/if}}>\n  <a href=\"{{url}}\">{{name}}</a>\n</li>\n\n{{#if children}}\n  {{#each children}}\n    {{> components/header/link-partial this li-class=../li-class}}\n  {{/each}}\n{{/if}}\n"}

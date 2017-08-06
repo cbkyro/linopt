@@ -1,0 +1,94 @@
+{{!
+  A single product, as shown in a listing.
+
+  @param this object
+         A product object.
+
+  @param show_quickshop bool
+         If true, include a link that can be used to open a quickshop modal.
+
+  @param show_compare bool
+         If true, include a checkbox to select products to compare.
+
+  @param show_remove bool
+         If true, include remove from cart form. Requires `remove_url` to be
+         available.
+
+  @param show_rating bool
+         If true, include the product's rating if there are enough votes.
+}}
+<article class="product-item">
+
+  <figure class="product-item-top {{#if price.saved}}product-item-on-sale{{/if}}">
+    <a class="product-item-thumbnail item-thumbnail"
+      href="{{url}}"
+      title="{{name}}"
+      style="background-image: url({{getImage image '500' (cdn default_image)}})"
+      data-product-compare-image="{{getImage image '500' (cdn default_image)}}">
+      {{#if image}}
+        <img class="show-for-sr" src="{{getImage image '500'}}" alt="{{image.alt}}">
+      {{/if}}
+      <div class="item-overlay"></div>
+    </a>
+
+    <div class="product-item-badges item-badges">
+      {{#if price.saved}}
+        <div class="badge-sale-tag">{{lang 'product.product_item_actions.sale'}}</div>
+      {{/if}}
+      {{#if out_of_stock_message}}
+        <div class="badge-out-of-stock">{{lang 'product.product_item_actions.sold_out'}}</div>
+      {{/if}}
+    </div>
+
+    {{#if show_quickshop}}
+      <a href="{{url}}" class="product-item-quickshop item-overlay-button button" data-quick-shop data-product-id="{{id}}">
+        {{lang 'core.product.quickshop.view'}}
+      </a>
+    {{/if}}
+
+    {{#if show_rating}}
+      <div class="product-item-rating">
+        {{> components/common/rating-stars rating=rating}}
+      </div>
+    {{/if}}
+
+    {{#if show_compare}}
+      <div class="product-item-compare">
+        <label class="form-label form-field-checkbox" for="compare-{{id}}">
+          <input
+            class="form-input form-checkbox"
+            data-compare-item
+            id="compare-{{id}}"
+            name="products[]"
+            type="checkbox"
+            value="{{id}}">
+          <span class="form-label-text">{{lang 'core.product.compare'}}</span>
+        </label>
+      </div>
+    {{/if}}
+
+    {{#if show_remove}}
+      <form class="form product-item-remove" action="{{remove_url}}" method="post">
+        <input type="submit" class="button secondary-inverse" value="&times;">
+      </form>
+    {{/if}}
+  </figure>
+
+  <div class="product-item-details">
+
+    {{#if brand.name}}
+      <span class="product-item-brand" data-product-compare-brand>{{brand.name}}</span>
+    {{/if}}
+
+    <h1 class="product-item-title">
+      <a href="{{url}}" title="{{name}}" data-product-compare-title>{{name}}</a>
+    </h1>
+
+    {{#if price}}
+      <div class="product-item-price" data-product-compare-price>
+        {{> components/product/price price=price show_savings=false schema_org=false show_tax_labels=true}}
+      </div>
+    {{/if}}
+  </div>
+
+</article>

@@ -1,0 +1,73 @@
+<div class="cart-total-overview" data-cart-overview>
+  <h4 class="cart-totals-heading">{{lang 'cart.overview'}}</h4>
+
+  <div class="cart-total-item cart-subtotal">
+    <span class="cart-total-item-label">{{lang 'cart.subtotal'}}</span>
+    <span class="cart-total-item-value">{{cart.sub_total.formatted}}</span>
+  </div>
+
+  {{#if cart.gift_wrapping_cost.value}}
+    <div class="cart-total-item">
+      <span class="cart-total-item-label">{{lang 'cart.gift_wrapping.title'}}</span>
+      <span class="cart-total-item-value">{{cart.gift_wrapping_cost.formatted}}</span>
+    </div>
+  {{/if}}
+
+  {{#if cart.discount}}
+    <div class="cart-total-item">
+      <span class="cart-total-item-label">{{lang 'cart.discount'}}</span>
+      <span class="cart-total-item-value">{{cart.discount.formatted}}</span>
+    </div>
+  {{/if}}
+
+  {{#each cart.coupons}}
+    {{#if discount.value '!==' 0}}
+      <div class="cart-total-item">
+        <span class="cart-total-item-label">{{lang 'cart.coupon_codes.coupon_code'}}</span>
+        <span class="cart-total-item-value">{{discount.formatted}}</span>
+      </div>
+    {{/if}}
+  {{/each}}
+
+  {{#each cart.gift_certificates}}
+    <div class="cart-total-item">
+      <span class="cart-total-item-label">{{lang 'cart.gift_certificates.gift_certificate'}}</span>
+      <span class="cart-total-item-value">{{used.formatted}}</span>
+    </div>
+  {{/each}}
+
+  {{#each cart.taxes}}
+    <div class="cart-total-item cart-tax">
+      <span class="cart-total-item-label">{{name}}</span>
+      <span class="cart-total-item-value">{{cost.formatted}}</span>
+    </div>
+  {{/each}}
+
+  <div class="cart-total-item cart-shipping">
+    <span class="cart-total-item-label">
+      {{lang 'cart.shipping_calculator.title'}}
+    </span>
+
+    <span class="cart-total-item-value">
+      {{#if cart.shipping_handling.shipping_cost}}
+        {{#if cart.shipping_handling.shipping_cost.value "===" 0}}
+          {{#if cart.shipping_handling.provider}}
+            <a class="cart-total-link" href="#modal-shipping-form" data-shipping-calculator-toggle>{{cart.shipping_handling.provider.description}}</a>
+          {{/if}}
+        {{else}}
+          <a class="cart-total-link" href="#modal-shipping-form" data-shipping-calculator-toggle>{{cart.shipping_handling.shipping_cost.formatted}}</a>
+        {{/if}}
+      {{else}}
+        <a class="cart-total-link" href="#modal-shipping-form" data-shipping-calculator-toggle>
+          <svg role="img"><use xlink:href="#icon-increment-regular"></use></svg>
+          {{lang 'cart.shipping_calculator.add_info'}}
+        </a>
+      {{/if}}
+    </span>
+  </div>
+
+  <div class="cart-total-item cart-total">
+    <span class="cart-total-item-label">{{lang 'cart.total'}}</span>
+    <span class="cart-total-item-value">{{cart.grand_total.formatted}} {{currency_selector.active_currency_code}}</span>
+  </div>
+</div>

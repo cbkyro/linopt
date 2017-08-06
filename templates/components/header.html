@@ -1,0 +1,100 @@
+<header class="main-header" role="banner">
+  {{> components/common/banners/top}}
+  <div class="header-menu {{#if banners.top.length}}has-banner{{/if}}" data-main-header>
+    <div class="header-mobile-nav-wrapper">
+      <a class="header-tools-menu" href="#" data-toggle-mobile-nav>
+        <svg class="header-tools-icon" data-toggle-icon role="img">
+          <use xlink:href="#icon-menu"></use>
+        </svg>
+        <span class="show-for-sr header-nav-label" data-toggle-label>{{lang 'header.menu'}}</span>
+      </a>
+    </div>
+
+    <div class="header-logo-wrapper">
+      {{#if settings.store_logo.image.data}}
+        <a class="header-logo" href="{{urls.home}}">
+          <img class="header-logo-image" src="{{getImage settings.store_logo.image 'logo'}}" alt="{{settings.store_logo.image.alt}}">
+        </a>
+      {{else}}
+        <h1 class="header-logo-text">
+          <a href="{{urls.home}}">{{settings.store_logo.title}}</a>
+        </h1>
+      {{/if}}
+    </div>
+
+    <nav class="header-nav-wrapper">
+      <ul class="header-nav">
+        <li class="header-nav-item">
+          <a href="{{urls.home}}">
+            <span class="header-nav-label">{{lang 'header.navigation.home'}}</span>
+          </a>
+        </li>
+
+        <li class="header-nav-item">
+          <a href="#" data-dropdown-toggle data-dropdown-center>
+            <span class="header-nav-label">{{lang 'header.navigation.products'}}</span>
+            <i class="header-nav-arrow"></i>
+          </a>
+          {{> components/header/dropdown-products}}
+        </li>
+
+        {{#all theme_settings.header-enable-blog settings.blog_enabled}}
+          {{#if blog.name.length ">" 0}}
+            <li class="header-nav-item">
+              <a href="{{blog.url}}">
+                <span class="header-nav-label">
+                  {{blog.name}}
+                </span>
+              </a>
+            </li>
+          {{/if}}
+        {{/all}}
+
+        {{#if pages}}
+          <li class="header-nav-item header-nav-item-pages">
+            <a href="#" data-dropdown-toggle data-dropdown-center>
+              <span class="header-nav-label">{{lang 'header.navigation.pages'}}</span>
+              <i class="header-nav-arrow"></i>
+            </a>
+            {{> components/header/dropdown-pages}}
+          </li>
+        {{/if}}
+      </ul>
+    </nav>
+
+    <div class="header-tools-wrapper">
+      <ul class="header-tools">
+        <li class="header-nav-item header-tools-item">
+          <a class="header-tools-search" href="#" data-modal-search-toggle>
+            <svg class="header-tools-icon" data-toggle-icon role="img">
+              <use xlink:href="#icon-search"></use>
+            </svg>
+            <span class="header-nav-label show-for-sr" data-toggle-label>{{lang 'header.search'}}</span>
+          </a>
+        </li>
+
+        {{#if currency_selector.currencies.length ">" 1}}
+          <li class="header-nav-item  header-tools-item">
+            <a href="#" class="header-tools-currency" data-dropdown-toggle>
+              <span class="header-nav-label">{{{currency_selector.active_currency_code}}}</span>
+              <i class="header-nav-arrow"></i>
+            </a>
+            <div class="header-dropdown dropdown-currency" data-dropdown-menu>
+              <ul>
+                {{#each currency_selector.currencies}}
+                  <li class="dropdown-link-list-item">
+                    <a href="{{{switch_url}}}" class="{{#if is_active}}selected{{/if}}">
+                      {{{name}}}
+                    </a>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          </li>
+        {{/if}}
+
+        {{> components/header/toolbar-quick-cart}}
+      </ul>
+    </div>
+  </div>
+</header>

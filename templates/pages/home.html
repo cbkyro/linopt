@@ -1,0 +1,33 @@
+---
+carousel: true
+products:
+  featured:
+    limit: {{theme_settings.home-number-featured-products}}
+  new:
+    limit: {{theme_settings.home-number-new-products}}
+---
+
+{{#partial "masthead"}}
+  {{#if carousel.slides}}
+    {{inject 'carouselDelay' carousel.swap_frequency}}
+    {{> components/carousel}}
+
+    {{{snippet 'home_content'}}}
+  {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+  <div class="page-container home-container">
+    {{#if theme_settings.home-section-order '==' 'products-blog'}}
+      {{> components/home/home-products}}
+      {{> components/home/home-blog}}
+    {{else}}
+      {{> components/home/home-blog}}
+      {{> components/home/home-products}}
+    {{/if}}
+  </div>
+
+{{/partial}}
+
+{{> layout/base}}

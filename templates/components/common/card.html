@@ -1,0 +1,62 @@
+{{!
+  TODO: Naming convention might be off for this partial. Consider renaming to less conflicting type
+  Reusable 'card' like block
+
+  @param image object
+         A Standard Image Object, will be set to a background image which has
+         the aspect ratio forced.
+
+  @param small_title string
+         Shows a smaller title above the main title
+
+  @param title string
+         Show's the card's main header
+
+  @param text string
+         Shows a truncated block of text that connects
+
+  @param truncate int
+         Enables an elipsis to show if needed
+
+  @param button_text string
+         The text to display in the button
+
+  @param button_link string
+         A full URL for the button
+}}
+<article class="{{#if alternate-card}}alternate-{{/if}}card-item {{#if hide_image}}hide-image{{/if}}">
+  {{#unless hide_image}}
+    <a class="card-item-thumbnail {{#unless image}}no-image{{/unless}}"
+      {{#if button_link}}href="{{button_link}}"{{/if}}
+      style="background-image: url({{getImage image image_size (cdn default_image)}})">
+      {{#if image}}
+        <img src="{{getImage image '500'}}" alt="{{image.alt}}">
+      {{/if}}
+    </a>
+  {{/unless}}
+
+  <div class="card-item-details">
+    {{#if small_title}}
+      <span class="card-item-small-title">{{small_title}}</span>
+    {{/if}}
+
+    {{#if title}}
+      <h1 class="card-item-title">{{title}}</h1>
+    {{/if}}
+
+    {{#if text}}
+      <div class="card-item-content">
+        {{{text}}}{{#if truncate}}{{#if text.length "<=" truncate}}&hellip;{{/if}}{{/if}}
+      </div>
+    {{/if}}
+
+    {{#if button_link}}
+      {{#if button_text}}
+        <a class="{{#if alternate-card}}card-item-link{{else}}button{{/if}}" href="{{button_link}}">
+          {{button_text}}
+          <svg role="img"><use xlink:href="#icon-arrow"></use></svg>
+        </a>
+      {{/if}}
+    {{/if}}
+  </div>
+</article>

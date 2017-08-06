@@ -1,0 +1,17 @@
+{{#if shipping_messages.length}}
+  {{#each shipping_messages}}
+    {{> core/alerts/alert-success message}}
+  {{/each}}
+{{/if}}
+
+{{#if product.shipping_messages.length}}
+  {{#each product.shipping_messages}}
+    {{> core/alerts/alert-success message}}
+  {{/each}}
+{{/if}}
+
+{{#if cart.status_messages.length}}
+  {{#each cart.status_messages}}
+    {{> core/alerts/alert-success message}}
+  {{/each}}
+{{/if}}

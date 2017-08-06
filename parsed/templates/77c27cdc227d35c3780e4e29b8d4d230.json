@@ -1,0 +1,1 @@
+{"components/common/rating-stars":"<div class=\"rating-stars {{#if star_size}}{{star_size}}{{else}}small{{/if}}-stars\" aria-hidden=\"true\">\n  {{#for 1 5}}\n    <svg class=\"rating-star {{#if ../rating '>=' $index}}rating-star-full{{else}}rating-star-empty{{/if}}\" role=\"presentation\">\n      <use xlink:href=\"#icon-star\"></use>\n    </svg>\n  {{/for}}\n</div>\n"}

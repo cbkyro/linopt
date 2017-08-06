@@ -1,0 +1,17 @@
+
+{{> components/common/modal-close href="modal-shipping-form"}}
+
+<div class="modal-body">
+  <div data-giftwrap-alerts></div>
+
+  <header class="modal-header">
+    <h3 class="modal-heading">
+      {{lang 'cart.gift_wrapping.title'}}
+    </h3>
+
+    {{!-- TODO: Enable if able to add WYSIWYG texts through the CP
+    <p>{{{lang 'cart.gift_wrapping.blurb'}}}</p>--}}
+  </header>
+
+  {{> components/cart/giftwrap-form}}
+</div>

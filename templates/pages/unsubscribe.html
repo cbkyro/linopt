@@ -1,0 +1,18 @@
+{{#partial "page"}}
+
+  {{> components/breadcrumbs breadcrumbs}}
+
+  <article class="page-container newsletter-page">
+    <header class="page-header layout-container">
+      <h1 class="page-title">
+        {{lang 'newsletter_page.unsubscribed_heading'}}
+      </h1>
+    </header>
+    <div class="page-content layout-container">
+        {{> core/alerts/alert-success message=(lang 'newsletter_page.unsubscribed_message' store_name=settings.store_name)}}
+    </div>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,132 @@
+{{#partial "page"}}
+
+  <article class="module-page-container compare-page layout-container">
+    <header class="block-header">
+      <h1 class="page-title">{{lang 'compare.heading'}}</h1>
+    </header>
+    <main class="block-content" data-product-item-container>
+      <div class="compare-content {{> components/common/compare/column-width number-of-comparisons=comparisons.length}}">
+        {{#if comparisons.length '<' 2}}
+          <p>{{lang 'compare.empty'}}</p>
+        {{else}}
+          {{#each (limit comparisons 4)}}
+            <article class="comparison-item" data-comparison-item>
+              <header
+                class="comparison-item-detail comparison-item-title"
+                data-comparison-label="{{lang 'compare.title'}}"
+                data-comparison-title>
+                <h1>
+                  <a href="{{url}}">{{name}}</a>
+                </h1>
+              </header>
+
+              <div
+                class="comparison-item-detail comparison-item-detail-flush"
+                data-comparison-image>
+                <figure class="comparison-item-image">
+                  <a class="item-thumbnail"
+                    href="{{url}}"
+                    title="{{name}}"
+                    style="background-image: url({{getImage image '1024' (cdn ../../theme_settings.default_image)}})">
+                    {{#if image}}
+                      <img class="show-for-sr" src="{{getImage image '1024'}}" alt="{{image.alt}}">
+                    {{/if}}
+                  </a>
+
+                  <div class="comparison-item-badges item-badges">
+                    {{#if price.saved}}
+                      <div class="badge-sale-tag">{{lang 'product.product_item_actions.sale'}}</div>
+                    {{/if}}
+                    {{#if out_of_stock_message}}
+                      <div class="badge-out-of-stock">{{lang 'product.product_item_actions.sold_out'}}</div>
+                    {{/if}}
+                  </div>
+                </figure>
+              </div>
+
+              <div
+                class="comparison-item-detail"
+                data-comparison-label="{{lang 'compare.price'}}"
+                data-comparison-price>
+                  {{#if price}}
+                    {{> components/product/price price=price show_savings=false schema_org=false show_tax_labels=true}}
+                  {{else}}
+                    {{lang 'compare.info_not_available'}}
+                  {{/if}}
+              </div>
+
+              <div
+                class="comparison-item-detail"
+                data-comparison-label="{{lang 'compare.brand'}}"
+                data-comparison-brand>
+                {{#if brand.name}}
+                  <p>
+                    <a class="compare-item-brand" {{#if brand.url}}href="{{brand.url}}"{{/if}}>
+                      {{brand.name}}
+                    </a>
+                  </p>
+                {{/if}}
+              </div>
+
+              <div
+                class="comparison-item-detail"
+                data-comparison-label="{{lang 'compare.availability'}}"
+                data-comparison-availability>
+                <p>
+                  {{#if out_of_stock_message}}
+                    {{out_of_stock_message}}
+                  {{else}}
+                    {{#if availability.length}}
+                      {{availability}}
+                    {{else}}
+                      {{lang 'compare.info_not_available'}}
+                    {{/if}}
+                  {{/if}}
+                </p>
+              </div>
+
+              {{#if settings.show_product_rating}}
+                <div
+                  class="comparison-item-detail comparison-item-rating"
+                  data-comparison-label="{{lang 'compare.rating'}}"
+                  data-comparison-rating>
+                  <p>{{#if rating '===' 0}}
+                    <span class="rating-text">{{lang 'compare.not_rated'}}</span>
+                  {{else}}
+                    {{> components/common/rating-stars rating=rating}}
+                    <span class="rating-text">{{lang 'compare.rating_text' rating=rating}}</span>
+                  {{/if}}</p>
+                </div>
+              {{/if}}
+
+              <div
+                class="comparison-item-detail"
+                data-comparison-label="{{lang 'compare.description'}}"
+                data-comparison-description>
+
+                <p>{{{summary}}}</p>
+
+                <div class="comparison-item-links">
+                  <a href="{{url}}" class="button button-large">
+                    {{lang 'product.view_product'}}
+                  </a>
+
+                  {{#if ../comparisons.length '>' 2}}
+                    <div>
+                      <a href="{{remove_url}}" class="comparison-item-remove">
+                        {{lang 'compare.remove_item'}}
+                      </a>
+                    </div>
+                  {{/if}}
+                </div>
+              </div>
+            </article>
+          {{/each}}
+        {{/if}}
+      </div>
+    </main>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

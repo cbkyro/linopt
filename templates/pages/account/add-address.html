@@ -1,0 +1,23 @@
+
+{{#partial "page"}}
+
+  <article class="page-container account-page">
+    <header class="block-header">
+      <h1 class="page-title">
+        {{#if forms.address.address_id}}
+          {{lang 'core.account.addresses.edit_heading'}}
+        {{else}}
+          {{lang 'core.account.addresses.add_heading'}}
+        {{/if}}
+      </h1>
+    </header>
+    <div class="block-content">
+      <div class="page-content">
+        {{> core/account/add-address}}
+      </div>
+    </div>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

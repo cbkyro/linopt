@@ -1,0 +1,10 @@
+
+{{#each product_results.facets}}
+  {{#if partial '!==' 'range'}}
+    {{#if items}}
+      {{> components/faceted-search/facets-base}}
+    {{/if}}
+  {{else}}
+    {{> components/faceted-search/facets-base}}
+  {{/if}}
+{{/each}}

@@ -1,0 +1,1 @@
+{"components/common/modal-close":"\n<a\n  href=\"#{{#if href}}{{href}}{{/if}}\"\n  class=\"modal-close {{#if class}}{{class}}{{/if}}\"\n  aria-label=\"{{lang 'common.modal.close'}}\"\n  {{#if data}}{{data}}{{/if}}>\n  <svg class=\"modal-close-icon\" role=\"presentation\">\n    <use xlink:href=\"#icon-close-thin\"></use>\n  </svg>\n</a>\n"}

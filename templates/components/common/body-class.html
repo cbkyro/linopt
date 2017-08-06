@@ -1,0 +1,8 @@
+template-{{page_type}}
+mobile-nav-closed
+collection-row-of-{{theme_settings.products-per-row}}
+{{#if theme_settings.alternate-layout-for-footer}}alternate-footer-layout{{/if}}
+{{#if theme_settings.carousel-background-enable}}carousel-title-background{{/if}}
+{{#contains template_file 'auth'}}template-account{{/contains}}
+{{#contains template_file 'account'}}template-account{{/contains}}
+{{#unless in_production}}dev-environment{{/unless}}

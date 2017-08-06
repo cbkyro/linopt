@@ -1,0 +1,1 @@
+{"components/loading-tab":"\n<div class=\"tab-content-panel active\" data-loading-tab>\n  <div class=\"tab-loading\">\n    <span class=\"loading-spinner\"></span>\n  </div>\n</div>\n"}

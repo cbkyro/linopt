@@ -1,0 +1,17 @@
+{{#partial "page"}}
+
+{{> components/breadcrumbs breadcrumbs}}
+
+<article class="page-container rss-page">
+  <header class="page-header layout-container">
+    <h1 class="page-title">{{lang 'rss.title'}}</h1>
+  </header>
+  <div class="page-content layout-container">
+
+    {{> components/rss}}
+
+  </div>
+</article>
+
+{{/partial}}
+{{> layout/base}}

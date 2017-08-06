@@ -1,0 +1,8 @@
+
+<input class="form-input form-radio" type="radio" id="{{rating_number}}-stars" name="revrating" value="{{rating_number}}" data-vd-message-required="{{lang 'forms.validation.required_rating'}}" required>
+<label for="{{rating_number}}-stars" class="star" title="{{lang 'product.reviews.stars_count' NUM=rating_number}}">
+  <svg class="star star-full" role="presentation">
+    <use xlink:href="#icon-star"></use>
+  </svg>
+  <span class="span show-for-sr">{{lang 'product.reviews.stars_count' NUM=rating_number}}</span>
+</label>

@@ -1,0 +1,23 @@
+
+{{#partial "page"}}
+
+  <article class="page-container account-page">
+    <header class="block-header">
+      <h1 class="page-title">
+        {{#if forms.wishlist.id}}
+          {{lang 'core.account.wishlists.edit'}}
+        {{else}}
+          {{lang 'core.account.wishlists.new'}}
+        {{/if}}
+      </h1>
+    </header>
+    <div class="block-content">
+      <div class="page-content">
+        {{> core/account/add-wishlist}}
+      </div>
+    </div>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

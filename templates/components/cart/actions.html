@@ -1,0 +1,15 @@
+
+<div class="cart-actions" data-cart-actions>
+  <div class="cart-buttons">
+    <a class="continue-shopping" href="{{urls.home}}">{{lang 'cart.continue_shopping'}}</a>
+    <a class="button button-large" href="{{urls.checkout.single_address}}" data-cart-submit>{{lang 'cart.check_out' amount=cart.grand_total.formatted}}</a>
+  </div>
+
+  {{#if cart.additional_checkout_buttons}}
+    <div class="cart-additional-checkout-buttons">
+      {{#each cart.additional_checkout_buttons}}
+        {{{this}}}
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

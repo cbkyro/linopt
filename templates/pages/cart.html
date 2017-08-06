@@ -1,0 +1,33 @@
+
+{{#partial "page"}}
+
+  <div class="main-alert" data-cart-errors></div>
+
+  <section class="module-page-container layout-container cart-page">
+
+    <header class="block-header cart-page-header layout-container" data-cart-header>
+      <h1 class="page-title">{{lang 'cart.title'}}</h1>
+    </header>
+
+    <div class="block-content cart-page-content">
+      {{#if cart.items}}
+        <div data-cart-content>
+          {{> components/cart/content}}
+        </div>
+
+        <div data-cart-totals>
+          {{> components/cart/totals}}
+        </div>
+      {{else}}
+        <p class="cart-empty">{{{lang 'cart.empty' home_url=urls.home}}}</p>
+      {{/if}}
+    </div>
+  </section>
+
+{{/partial}}
+
+{{#partial "footer-modal"}}
+  {{> components/cart/shipping-modal cart.shipping_handling}}
+{{/partial}}
+
+{{> layout/base}}

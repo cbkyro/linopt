@@ -1,0 +1,16 @@
+<li class="header-nav-item header-tools-item header-tools-item-cart">
+  <a class="header-tools-cart" href="{{urls.cart}}" data-dropdown-toggle>
+    <svg class="header-tools-icon" role="img"><use xlink:href="#icon-cart"></use></svg>
+    <span class="header-nav-label">
+      <span class="header-cart-label">
+        {{lang 'header.navigation.cart'}}
+      </span>
+      <span class="header-cart-count {{#unless cart.items.length}}hidden{{/unless}}" data-cart-preview-count>({{cart.items.length}})</span>
+    </span>
+    <i class="header-nav-arrow"></i>
+  </a>
+
+  <div data-quick-cart>
+    {{> components/header/dropdown-quick-cart}}
+  </div>
+</li>

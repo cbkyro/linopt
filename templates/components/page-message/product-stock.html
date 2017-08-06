@@ -1,0 +1,8 @@
+
+{{#if product.out_of_stock}}
+  {{#if product.out_of_stock_message}}
+    {{> core/alerts/alert-info product.out_of_stock_message}}
+  {{else}}
+    {{> core/alerts/alert-info (lang 'product.out_of_stock_long' title=product.title)}}
+  {{/if}}
+{{/if}}

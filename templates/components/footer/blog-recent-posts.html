@@ -1,0 +1,49 @@
+
+<div class="footer-blog-recent-posts {{theme_settings.background-for-recent-blog-posts}}">
+  <section class="layout-container">
+    {{#if blog.name.length ">" 0}}
+      <header class="footer-recent-posts-header">
+        <h1 class="section-title">
+          {{lang 'footer.blog.recent_posts_heading' blog_name=blog.name}}
+        </h1>
+      </header>
+    {{/if}}
+
+    <div class="cards-row row-of-2">
+      {{#each (limit blog.recent_posts 2)}}
+        {{> components/common/card
+          truncate=../theme_settings.card-excerpt-length
+          image=thumbnail
+          alternate-card=true
+          image_size='500x500'
+          title=title
+          text=summary
+          button_text=(lang 'blog.read_more')
+          button_link=url
+          default_image=../theme_settings.default_image
+        }}
+      {{/each}}
+    </div>
+
+    {{#if blog.recent_posts.length '==' 5}}
+      <div class="cards-row row-of-3 small-headers">
+        {{#each blog.recent_posts}}
+          {{#if @index '>=' 2}}
+            {{> components/common/card
+              truncate=../../theme_settings.card-excerpt-length
+              image=thumbnail
+              alternate-card=true
+              image_size='500x500'
+              title=title
+              text=summary
+              button_text=(lang 'blog.read_more')
+              button_link=url
+              default_image=../../theme_settings.default_image
+            }}
+          {{/if}}
+        {{/each}}
+      </div>
+    {{/if}}
+
+  </section>
+</div>

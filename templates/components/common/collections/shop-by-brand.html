@@ -1,0 +1,23 @@
+
+{{#if shop_by_brand}}
+  <div class="collection-facet">
+    <h1 class="collection-inside-column-heading">
+      {{lang 'collections.shop_by.brand'}}
+    </h1>
+    <ul class="collection-facet-list">
+      {{#each (limit shop_by_brand 5)}}
+        {{#if ../brand.name '!==' name}}
+          <li class="collection-facet-list-item">
+            <a href="{{url}}" data-faceted-search-facet data-go-to-url>{{name}}</a>
+          </li>
+        {{/if}}
+      {{/each}}
+
+      {{#if shop_by_brand.length '>' 5}}
+        <li class="collection-facet-list-item collection-facet-list-separation visible">
+          <a href="{{urls.brands}}">{{lang 'footer.brands.view_all'}}</a>
+        </li>
+      {{/if}}
+    </ul>
+  </div>
+{{/if}}

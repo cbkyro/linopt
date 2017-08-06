@@ -1,0 +1,12 @@
+
+<div
+  class="header-dropdown dropdown-menu dropdown-menu-style-{{theme_settings.header-menu-style}}"
+  data-dropdown-menu>
+  {{#if theme_settings.header-menu-style '==' 'mega-menu'}}
+    {{#each categories}}
+      {{> components/header/dropdown-partial-mega-menu}}
+    {{/each}}
+  {{else}}
+    {{> components/header/dropdown-partial-drill-down}}
+  {{/if}}
+</div>

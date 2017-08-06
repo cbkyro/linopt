@@ -1,0 +1,20 @@
+{{#each product.reviews.messages}}
+  {{#if success}}
+    visible
+  {{/if}}
+{{/each}}
+{{#if product.out_of_stock}}
+  visible
+{{/if}}
+{{#if forms.contact.error}}
+  visible
+{{/if}}
+{{#if shipping_messages.length}}
+  visible
+{{/if}}
+{{#if product.shipping_messages.length}}
+  visible
+{{/if}}
+{{#if cart.status_messages.length}}
+  visible
+{{/if}}

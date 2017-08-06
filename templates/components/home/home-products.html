@@ -1,0 +1,9 @@
+{{#if theme_settings.home-product-order '==' 'featured-new'}}
+  {{> components/home/products-featured}}
+  {{> components/home/products-new}}
+{{/if}}
+
+{{#if theme_settings.home-product-order '==' 'new-featured'}}
+  {{> components/home/products-new}}
+  {{> components/home/products-featured}}
+{{/if}}

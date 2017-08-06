@@ -1,0 +1,565 @@
+{
+  "name": "Hero 1.13.2 copy on July 31 2017",
+  "version": "1.13.2",
+  "meta": {
+    "price": 17000,
+    "documentation_url": "http://support.pixelunion.net/category/201-hero",
+    "composed_image": "hero-composed.png",
+    "features": [
+      "fully_responsive",
+      "mega_navigation",
+      "frontpage_slideshow",
+      "quick_add_to_cart",
+      "customized_checkout",
+      "switchable_product_view",
+      "product_comparison_table",
+      "complex_search_filtering",
+      "customizable_product_selector",
+      "cart_suggested_products",
+      "free_customer_support",
+      "free_theme_upgrades",
+      "high_res_product_images",
+      "product_filtering",
+      "advanced_quick_view",
+      "product_showcase",
+      "persistent_cart",
+      "one_page_check_out",
+      "product_videos"
+    ],
+    "author_name": "Pixel Union",
+    "author_email": "support@pixelunion.net",
+    "author_support_url": "http://support.pixelunion.net/"
+  },
+  "css_compiler": "scss",
+  "autoprefixer_cascade": true,
+  "autoprefixer_browsers": [
+    "last 3 versions"
+  ],
+  "resources": {
+    "cart": true,
+    "blog": {
+      "recent_posts": {
+        "limit": 5
+      }
+    },
+    "category": {
+      "shop_by_price": true
+    },
+    "shop_by_brand": {
+      "limit": 6
+    }
+  },
+  "settings": {
+    "_images": {
+      "200": {
+        "width": 200,
+        "height": 200
+      },
+      "500": {
+        "width": 500,
+        "height": 500
+      },
+      "1024": {
+        "width": 1024,
+        "height": 1024
+      },
+      "account-product-thumbnail": {
+        "width": 500,
+        "height": 500
+      },
+      "core-swatch": {
+        "width": 150,
+        "height": 150
+      },
+      "core-product-picklist": {
+        "width": 80,
+        "height": 200
+      },
+      "account-logo": {
+        "width": 500,
+        "height": 200
+      },
+      "logo": {
+        "width": 500,
+        "height": 200
+      },
+      "thumbnail": {
+        "width": 100,
+        "height": 100
+      },
+      "512x1024": {
+        "width": 512,
+        "height": 1024
+      },
+      "1280x650": {
+        "width": 1280,
+        "height": 650
+      },
+      "1600x700": {
+        "width": 1600,
+        "height": 700
+      }
+    },
+    "primary-font": "Google_Roboto_400,400italic,500,700",
+    "secondary-font": "Google_Playfair+Display_400,400italic,700,700italic",
+    "tertiary-font": "Google_Roboto_400,400italic,500,700",
+    "body-background": "#f6f6f6",
+    "header-background": "#ffffff",
+    "header-color": "#1d1d20",
+    "modal-background": "#1d1d20",
+    "banner-background": "#ffffff",
+    "banner-color": "#1d1d20",
+    "button-primary-background": "#1d1d20",
+    "button-primary-color": "#ffffff",
+    "button-secondary-background": "#ffffff",
+    "button-secondary-color": "#1d1d20",
+    "heading-color": "#1d1d20",
+    "body-color": "#7d7d7d",
+    "meta-color": "#9f9f9f",
+    "input-color": "#9f9f9f",
+    "accent-color": "#4a4a4a",
+    "content-background": "#ffffff",
+    "content-border-color": "#e4e4e4",
+    "alert-color-success": "#45d29a",
+    "alert-color-info": "#7d7d7d",
+    "alert-color-error": "#b72436",
+    "masthead-color": "#ffffff",
+    "masthead-background": "#393935",
+    "carousel-title-color": "#1d1d20",
+    "carousel-background-color": "#ffffff",
+    "carousel-text-alignment": "center",
+    "meta-font": "primary-font",
+    "banner-font": "secondary-font",
+    "button-font": "primary-font",
+    "body-font-size": 14,
+    "h1-font-size": 50,
+    "h1-font-weight": "normal",
+    "h2-font-size": 36,
+    "h2-font-weight": "normal",
+    "h3-font-size": 24,
+    "h3-font-weight": "bold",
+    "header-menu-style": "mega-menu",
+    "header-menu-mega-columns": 5,
+    "header-enable-border": "true",
+    "header-enable-blog": true,
+    "home-product-order": "new-featured",
+    "home-section-order": "products-blog",
+    "home-number-featured-products": 6,
+    "home-number-new-products": 6,
+    "home-show-recent-blog-posts": true,
+    "alternate-style-for-newsletter": "false",
+    "alternate-style-for-footer": "false",
+    "alternate-style-for-collections": "false",
+    "alternate-style-for-product": "false",
+    "alternate-style-for-product-item": "false",
+    "alternate-layout-for-footer": false,
+    "background-for-featured-products": "background-content",
+    "background-for-new-products": "background-triangle-upper-left",
+    "background-for-related-products": "background-triangle-upper-left",
+    "background-for-recent-blog-posts": "background-content",
+    "default_image": "/assets/images/no-image.svg",
+    "default_image_gift_certificate": "/assets/images/no-image.svg",
+    "product-item-size": "ratio-3-2",
+    "product-item-crop": "cover",
+    "product-images-enable-zoom": true,
+    "product-purchase-disable-ajax": false,
+    "card-image-width": 500,
+    "card-image-height": 500,
+    "card-excerpt-length": 250,
+    "brand-count": 18,
+    "products-per-row": 3,
+    "products-per-page": 9,
+    "carousel-transition": "slide-transition",
+    "carousel-title-size": 70,
+    "carousel-caption-size": 24,
+    "carousel-background-enable": true,
+    "carousel-font": "primary-font",
+    "carousel-font-weight": "normal",
+    "contact-show-store-name": true,
+    "collection-enable-filters": true,
+    "theme-credits": true,
+    "enable-payment-icons": true,
+    "payment-visa": true,
+    "payment-mastercard": true,
+    "payment-american-express": true,
+    "payment-discover": false,
+    "payment-paypal": false,
+    "payment-apple-pay": false,
+    "apple-pay-style": "black",
+    "optimizedCheckout-header-backgroundColor": "#f7f7f7",
+    "optimizedCheckout-show-backgroundImage": false,
+    "optimizedCheckout-backgroundImage": "",
+    "optimizedCheckout-backgroundImage-size": "1000x400",
+    "optimizedCheckout-show-logo": "none",
+    "optimizedCheckout-logo": "",
+    "optimizedCheckout-logo-size": "250x100",
+    "optimizedCheckout-logo-position": "left",
+    "optimizedCheckout-headingPrimary-color": "#2d2d2d",
+    "optimizedCheckout-headingPrimary-font": "Google_Montserrat_400",
+    "optimizedCheckout-headingSecondary-color": "#2d2d2d",
+    "optimizedCheckout-headingSecondary-font": "Google_Montserrat_400",
+    "optimizedCheckout-body-backgroundColor": "#ffffff",
+    "optimizedCheckout-contentPrimary-color": "#4f4f4f",
+    "optimizedCheckout-contentPrimary-font": "Google_Karla_400",
+    "optimizedCheckout-contentSecondary-color": "#989898",
+    "optimizedCheckout-contentSecondary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonPrimary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonPrimary-color": "#ffffff",
+    "optimizedCheckout-buttonPrimary-colorHover": "#ffffff",
+    "optimizedCheckout-buttonPrimary-backgroundColor": "#454545",
+    "optimizedCheckout-buttonPrimary-backgroundColorHover": "#666666",
+    "optimizedCheckout-buttonPrimary-borderColor": "#454545",
+    "optimizedCheckout-buttonPrimary-borderColorHover": "#666666",
+    "optimizedCheckout-buttonSecondary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonSecondary-color": "#4f4f4f",
+    "optimizedCheckout-buttonSecondary-backgroundColor": "#ffffff",
+    "optimizedCheckout-buttonSecondary-borderColor": "#dfdfdf",
+    "optimizedCheckout-link-color": "#4496f6",
+    "optimizedCheckout-link-font": "Google_Karla_400",
+    "optimizedCheckout-discountBanner-backgroundColor": "#f5f5f5",
+    "optimizedCheckout-discountBanner-textColor": "#333333",
+    "optimizedCheckout-discountBanner-iconColor": "#333333",
+    "optimizedCheckout-orderSummary-backgroundColor": "#ffffff",
+    "optimizedCheckout-step-backgroundColor": "#4f4f4f",
+    "optimizedCheckout-step-textColor": "#ffffff",
+    "optimizedCheckout-formField-backgroundColor": "white",
+    "optimizedCheckout-formField-borderColor": "#989898"
+  },
+  "variations": [
+    {
+      "name": "Minimal",
+      "id": "minimal",
+      "meta": {
+        "desktop_screenshot": "hero-minimal-desktop.png",
+        "mobile_screenshot": "hero-minimal-mobile.png",
+        "description": "Hero is a flexible and feature-rich theme designed to wow shoppers. Its unique product grid and impactful use of white space call attention to your products, while its customizable background lets you tailor your theme to perfection. Powerful enough to handle any size of inventory, Hero is ideal for boutique and enterprise stores alike.",
+        "demo_url": "http://hero-minimal-demo.mybigcommerce.com",
+        "industries": [
+          "arts_crafts"
+        ],
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "mobile"
+        ]
+      },
+      "settings": {
+        "_images": {
+          "200": {
+            "width": 200,
+            "height": 200
+          },
+          "500": {
+            "width": 500,
+            "height": 500
+          },
+          "1024": {
+            "width": 1024,
+            "height": 1024
+          },
+          "account-product-thumbnail": {
+            "width": 500,
+            "height": 500
+          },
+          "core-swatch": {
+            "width": 150,
+            "height": 150
+          },
+          "core-product-picklist": {
+            "width": 80,
+            "height": 200
+          },
+          "account-logo": {
+            "width": 500,
+            "height": 200
+          },
+          "logo": {
+            "width": 500,
+            "height": 200
+          },
+          "thumbnail": {
+            "width": 100,
+            "height": 100
+          },
+          "512x1024": {
+            "width": 512,
+            "height": 1024
+          },
+          "1280x650": {
+            "width": 1280,
+            "height": 650
+          },
+          "1600x700": {
+            "width": 1600,
+            "height": 700
+          },
+          "account-product-thumb": {
+            "width": 440,
+            "height": 600
+          }
+        },
+        "primary-font": "Google_Roboto_400,400italic,500,700",
+        "secondary-font": "Google_Roboto_400,400italic,500,700",
+        "tertiary-font": "Google_Roboto_400,400italic,500,700",
+        "body-background": "#f6f6f6",
+        "header-background": "#ffffff",
+        "header-color": "#1d1d20",
+        "modal-background": "#1d1d20",
+        "banner-background": "#ffffff",
+        "banner-color": "#3f3faf",
+        "button-primary-background": "#1d1d20",
+        "button-primary-color": "#ffffff",
+        "button-secondary-background": "#ffffff",
+        "button-secondary-color": "#1d1d20",
+        "heading-color": "#1d1d20",
+        "body-color": "#7d7d7d",
+        "meta-color": "#9f9f9f",
+        "input-color": "#9f9f9f",
+        "accent-color": "#4a4a4a",
+        "content-background": "#ffffff",
+        "content-border-color": "#e4e4e4",
+        "alert-color-success": "#45d29a",
+        "alert-color-info": "#7d7d7d",
+        "alert-color-error": "#b72436",
+        "masthead-color": "#ffffff",
+        "masthead-background": "#050505",
+        "carousel-title-color": "#1d1d20",
+        "carousel-background-color": "#ffffff",
+        "carousel-text-alignment": "left",
+        "meta-font": "primary-font",
+        "banner-font": "secondary-font",
+        "button-font": "primary-font",
+        "body-font-size": 14,
+        "h1-font-size": 50,
+        "h1-font-weight": "normal",
+        "h2-font-size": 36,
+        "h2-font-weight": "normal",
+        "h3-font-size": 24,
+        "h3-font-weight": "bold",
+        "header-menu-style": "mega-menu",
+        "header-menu-mega-columns": 5,
+        "header-enable-border": "true",
+        "header-enable-blog": true,
+        "home-product-order": "new-featured",
+        "home-section-order": "products-blog",
+        "home-number-featured-products": 6,
+        "home-number-new-products": 6,
+        "home-show-recent-blog-posts": true,
+        "alternate-style-for-newsletter": "false",
+        "alternate-style-for-footer": "false",
+        "alternate-style-for-collections": "false",
+        "alternate-style-for-product": "false",
+        "alternate-style-for-product-item": "false",
+        "alternate-layout-for-footer": false,
+        "background-for-featured-products": "background-content",
+        "background-for-new-products": "background-triangle-upper-left",
+        "background-for-related-products": "background-triangle-upper-left",
+        "background-for-recent-blog-posts": "background-content",
+        "default_image": "/assets/images/no-image.svg",
+        "default_image_gift_certificate": "/assets/images/no-image.svg",
+        "product-item-size": "ratio-3-2",
+        "product-item-crop": "cover",
+        "product-images-enable-zoom": true,
+        "product-purchase-disable-ajax": false,
+        "card-image-width": 500,
+        "card-image-height": 500,
+        "card-excerpt-length": 250,
+        "brand-count": 18,
+        "products-per-row": 3,
+        "products-per-page": 9,
+        "carousel-transition": "slide-transition",
+        "carousel-title-size": 70,
+        "carousel-caption-size": 24,
+        "carousel-background-enable": false,
+        "carousel-font": "primary-font",
+        "carousel-font-weight": "normal",
+        "contact-show-store-name": true,
+        "collection-enable-filters": true,
+        "theme-credits": true,
+        "enable-payment-icons": true,
+        "payment-visa": true,
+        "payment-mastercard": true,
+        "payment-american-express": true,
+        "payment-discover": false,
+        "payment-paypal": false,
+        "payment-apple-pay": false,
+        "apple-pay-style": "black",
+        "optimizedCheckout-header-backgroundColor": "#f7f7f7",
+        "optimizedCheckout-show-backgroundImage": false,
+        "optimizedCheckout-backgroundImage": "",
+        "optimizedCheckout-backgroundImage-size": "1000x400",
+        "optimizedCheckout-show-logo": "none",
+        "optimizedCheckout-logo": "",
+        "optimizedCheckout-logo-size": "250x100",
+        "optimizedCheckout-logo-position": "left",
+        "optimizedCheckout-headingPrimary-color": "#2d2d2d",
+        "optimizedCheckout-headingPrimary-font": "Google_Montserrat_400",
+        "optimizedCheckout-headingSecondary-color": "#2d2d2d",
+        "optimizedCheckout-headingSecondary-font": "Google_Montserrat_400",
+        "optimizedCheckout-body-backgroundColor": "#ffffff",
+        "optimizedCheckout-contentPrimary-color": "#4f4f4f",
+        "optimizedCheckout-contentPrimary-font": "Google_Karla_400",
+        "optimizedCheckout-contentSecondary-color": "#989898",
+        "optimizedCheckout-contentSecondary-font": "Google_Karla_400",
+        "optimizedCheckout-buttonPrimary-font": "Google_Karla_400",
+        "optimizedCheckout-buttonPrimary-color": "#ffffff",
+        "optimizedCheckout-buttonPrimary-colorHover": "#ffffff",
+        "optimizedCheckout-buttonPrimary-backgroundColor": "#454545",
+        "optimizedCheckout-buttonPrimary-backgroundColorHover": "#666666",
+        "optimizedCheckout-buttonPrimary-borderColor": "#454545",
+        "optimizedCheckout-buttonPrimary-borderColorHover": "#666666",
+        "optimizedCheckout-buttonSecondary-font": "Google_Karla_400",
+        "optimizedCheckout-buttonSecondary-color": "#4f4f4f",
+        "optimizedCheckout-buttonSecondary-backgroundColor": "#ffffff",
+        "optimizedCheckout-buttonSecondary-borderColor": "#dfdfdf",
+        "optimizedCheckout-link-color": "#4496f6",
+        "optimizedCheckout-link-font": "Google_Karla_400",
+        "optimizedCheckout-discountBanner-backgroundColor": "#f5f5f5",
+        "optimizedCheckout-discountBanner-textColor": "#333333",
+        "optimizedCheckout-discountBanner-iconColor": "#333333",
+        "optimizedCheckout-orderSummary-backgroundColor": "#ffffff",
+        "optimizedCheckout-step-backgroundColor": "#4f4f4f",
+        "optimizedCheckout-step-textColor": "#ffffff",
+        "optimizedCheckout-formField-backgroundColor": "white",
+        "optimizedCheckout-formField-borderColor": "#989898"
+      },
+      "images": {
+      }
+    },
+    {
+      "name": "Warm",
+      "id": "warm",
+      "meta": {
+        "desktop_screenshot": "hero-warm-desktop.png",
+        "mobile_screenshot": "hero-warm-mobile.png",
+        "description": "Hero is a flexible and feature-rich theme designed to wow shoppers. Its unique product grid and impactful use of white space call attention to your products, while its customizable background lets you tailor your theme to perfection. Powerful enough to handle any size of inventory, Hero is ideal for boutique and enterprise stores alike.",
+        "demo_url": "http://hero-warm-demo.mybigcommerce.com",
+        "industries": [
+          "fashion_jewelry"
+        ],
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "mobile",
+          "clothing"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Roboto+Condensed_400,400italic,700,700italic",
+        "secondary-font": "Google_Raleway_400,400italic,500,700,700italic",
+        "tertiary-font": "Google_Roboto+Condensed_400,400italic,700,700italic",
+        "header-background": "#000000",
+        "header-color": "#9d9d9d",
+        "carousel-title-color": "#3a3a3a",
+        "alternate-style-for-newsletter": "true",
+        "alternate-style-for-footer": "true",
+        "alternate-layout-for-footer": true,
+        "alternate-style-for-collections": "false",
+        "alternate-style-for-product": "false",
+        "alternate-style-for-product-item": "false",
+        "home-product-order": "new-featured",
+        "home-section-order": "blog-products",
+        "background-for-featured-products": "background-body",
+        "background-for-new-products": "background-content",
+        "background-for-related-products": "background-content",
+        "body-background": "#ffffff",
+        "content-background": "#f6f6f6",
+        "button-primary-background": "#b18f64",
+        "button-primary-color": "#ffffff",
+        "button-secondary-background": "#ffffff",
+        "button-secondary-color": "#b18f64",
+        "home-number-featured-products": 9,
+        "home-number-new-products": 0
+      }
+    },
+    {
+      "name": "Clean",
+      "id": "clean",
+      "meta": {
+        "desktop_screenshot": "hero-clean-desktop.png",
+        "mobile_screenshot": "hero-clean-mobile.png",
+        "description": "Hero is a flexible and feature-rich theme designed to wow shoppers. Its unique product grid and impactful use of white space call attention to your products, while its customizable background lets you tailor your theme to perfection. Powerful enough to handle any size of inventory, Hero is ideal for boutique and enterprise stores alike.",
+        "demo_url": "http://hero-clean-demo.mybigcommerce.com",
+        "industries": [
+          "sports_recreation"
+        ],
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "mobile",
+          "outdoor_sports",
+          "hunting_fishing"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Oswald_400,700",
+        "secondary-font": "Google_Lora_400,400italic,700,700italic",
+        "tertiary-font": "Google_Source+Sans+Pro_400,400italic,700,700italic",
+        "button-primary-background": "#84B4a9",
+        "alternate-style-for-newsletter": "true",
+        "alternate-style-for-footer": "false",
+        "alternate-style-for-collections": "true",
+        "alternate-style-for-product": "false",
+        "alternate-style-for-product-item": "true",
+        "home-product-order": "featured-new",
+        "home-section-order": "blog-products",
+        "home-number-featured-products": 9,
+        "home-number-new-products": 3,
+        "background-for-featured-products": "background-body",
+        "background-for-new-products": "background-content",
+        "background-for-related-products": "background-content",
+        "product-item-size": "ratio-3-2"
+      }
+    },
+    {
+      "name": "Bright",
+      "id": "bright",
+      "meta": {
+        "desktop_screenshot": "hero-bright-desktop.png",
+        "mobile_screenshot": "hero-bright-mobile.png",
+        "description": "Hero is a flexible and feature-rich theme designed to wow shoppers. Its unique product grid and impactful use of white space call attention to your products, while its customizable background lets you tailor your theme to perfection. Powerful enough to handle any size of inventory, Hero is ideal for boutique and enterprise stores alike.",
+        "demo_url": "http://hero-bright-demo.mybigcommerce.com",
+        "industries": [
+          "toys_games"
+        ],
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "mobile",
+          "outdoor_sports"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Lato_400,400italic,700,700italic",
+        "secondary-font": "Google_Domine_400,700",
+        "tertiary-font": "Google_Lato_400,400italic,700,700italic",
+        "header-background": "#b74956",
+        "header-color": "#ffffff",
+        "body-background": "#f7fbfc",
+        "button-primary-background": "#276684",
+        "carousel-title-color": "#ffffff",
+        "carousel-background-color": "#1d1d20",
+        "alternate-style-for-newsletter": "true",
+        "alternate-style-for-footer": "true",
+        "alternate-style-for-collections": "true",
+        "alternate-style-for-product": "true",
+        "alternate-style-for-product-item": "false",
+        "alternate-layout-for-footer": true,
+        "home-product-order": "featured-new",
+        "home-number-featured-products": 6,
+        "home-number-new-products": 0,
+        "background-for-featured-products": "background-body",
+        "background-for-new-products": "background-content",
+        "background-for-related-products": "background-content"
+      }
+    }
+  ]
+}

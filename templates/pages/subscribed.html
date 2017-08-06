@@ -1,0 +1,26 @@
+{{#partial "page"}}
+
+  {{> components/breadcrumbs breadcrumbs}}
+
+  <article class="page-container newsletter-page">
+    <header class="page-header layout-container">
+      <h1 class="page-title">
+        {{#if subscription.error}}
+          {{lang 'newsletter_page.subscribed_heading_error'}}
+        {{else}}
+          {{lang 'newsletter_page.subscribed_heading_success'}}
+        {{/if}}
+      </h1>
+    </header>
+    <div class="page-content layout-container">
+        {{#if subscription.error}}
+          {{> core/alerts/alert-error message=subscription.error}}
+        {{else}}
+          {{> core/alerts/alert-success message=(lang 'newsletter_page.subscribed_message')}}
+        {{/if}}
+    </div>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

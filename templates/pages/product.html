@@ -1,0 +1,33 @@
+---
+product:
+  reviews:
+    limit: 10
+  videos:
+    limit: 10
+  related_products:
+    limit: {{theme_settings.products-per-row}}
+---
+{{#partial "page"}}
+
+  <article class="page-container product-page">
+    <div class="page-content" data-product-container>
+      {{> components/product/details schema_org=true show-breadcrumbs=true hide-tabs=false}}
+    </div>
+
+    {{#if product.related_products.length}}
+      {{> components/product/products-related grid=product.related_products default_image=theme_settings.default_image}}
+    {{/if}}
+  </article>
+
+  {{> core/structured-data/product}}
+  {{> core/structured-data/product-reviews}}
+
+{{/partial}}
+
+{{#if settings.show_product_reviews}}
+  {{#partial "footer-modal"}}
+    {{> components/reviews/review-modal}}
+  {{/partial}}
+{{/if}}
+
+{{> layout/base}}

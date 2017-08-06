@@ -1,0 +1,42 @@
+---
+brand:
+  products:
+    limit: {{theme_settings.products-per-page}}
+---
+
+{{#partial "masthead"}}
+  {{> components/common/collections/banner image=brand.image heading=brand.name}}
+{{/partial}}
+
+
+{{#partial "page"}}
+
+  {{> components/breadcrumbs breadcrumbs}}
+
+  <section class="collection-page" data-faceted-search>
+    <header class="collection-header">
+      <div class="collection-navigation" data-collection-sort>
+        {{> components/brand/header}}
+      </div>
+
+      {{#if theme_settings.collection-enable-filters}}
+        <div class="collection-filter" data-collection-facets>
+          {{> components/brand/sidebar}}
+        </div>
+      {{/if}}
+    </header>
+
+    <div class="collection-products">
+      <div class="layout-container" data-collection data-compare-wrapper>
+        {{> components/brand/product-listing}}
+      </div>
+    </div>
+
+    <footer class="collection-footer" data-collection-footer>
+      {{> components/brand/footer}}
+    </footer>
+  </section>
+
+{{/partial}}
+
+{{> layout/base}}

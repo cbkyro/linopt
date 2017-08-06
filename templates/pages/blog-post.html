@@ -1,0 +1,69 @@
+{{#partial "page"}}
+
+  {{> components/breadcrumbs breadcrumbs}}
+
+  <section class="page-container blog-page">
+    <div class="page-content">
+      <div class="blog-column-articles">
+
+        <article class="blog-item">
+
+          <header class="blog-item-header">
+            {{#if blog.post.thumbnail}}
+              <figure
+                class="blog-item-featured-image"
+                style="background-image: url({{getImage blog.post.thumbnail '1280x650'}})">
+                <img class='show-for-sr' src="{{getImage blog.post.thumbnail '1280x650'}}" alt="{{blog.post.thumbnail.alt}}">
+              </figure>
+            {{/if}}
+
+            <h4 class="blog-item-title">
+              {{blog.post.title}}
+            </h4>
+
+            <div class="blog-item-header-caption">
+              <time class="blog-item-posted-date">{{blog.post.date_published}}</time>
+
+              {{#if blog.post.author}}
+                <span class="blog-item-author">{{lang 'blog.posted_by' author=blog.post.author}}</span>
+              {{/if}}
+            </div>
+          </header>
+
+          <div class="blog-item-content rte">
+            {{{blog.post.body}}}
+
+            <div class="blog-item-actions">
+              {{#if blog.post.tags}}
+                <div class="blog-item-tags">
+                  <span class="blog-item-tags-label">{{lang 'blog.tags'}}</span>
+                  <ul class="blog-item-tags-list">
+                    {{#each blog.post.tags}}
+                      <li class="blog-item-tag">
+                        <a href="{{url}}">#{{name}}</a>
+                      </li>
+                    {{/each}}
+                  </ul>
+                </div>
+              {{/if}}
+
+              {{> components/common/share-list
+                settings.add_this
+                cta=(lang 'blog.share_article')
+                position='top'
+                url=blog.post.url
+                image=(getImage blog.post.thumbnail '1280x650' (cdn theme_settings.default_image))
+              }}
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  {{> core/structured-data/blog-post}}
+
+{{/partial}}
+
+{{> layout/base}}

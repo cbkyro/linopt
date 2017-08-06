@@ -1,0 +1,15 @@
+
+<div class="cart-totals-row" data-cart-totals-row>
+  <div class="cart-total-cell cart-total-codes">
+    {{> components/cart/coupon-codes}}
+    {{#if settings.gift_certificates_enabled}}
+      {{> components/cart/gift-certificates}}
+    {{/if}}
+  </div>
+
+  <div class="cart-total-cell">
+    {{> components/cart/overview}}
+  </div>
+</div>
+
+{{> components/cart/actions}}

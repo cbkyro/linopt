@@ -1,0 +1,17 @@
+
+{{#partial "page"}}
+
+{{> components/breadcrumbs breadcrumbs}}
+
+<article class="page-container error-page">
+  <header class="page-header layout-container">
+    <h1 class="page-title">{{lang 'page_errors.not_found.heading'}}</h1>
+  </header>
+  <div class="page-content layout-container rte">
+    <p>{{lang 'page_errors.not_found.message'}}</p>
+  </div>
+</article>
+
+{{/partial}}
+
+{{> layout/base}}

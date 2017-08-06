@@ -1,0 +1,22 @@
+
+{{#if blog.recent_posts}}
+  <h4 class="blog-sidebar-heading">
+    {{lang 'blog.recent_posts'}}
+  </h4>
+
+  <ul class="blog-sidebar-component">
+    {{#each blog.recent_posts}}
+      <li class="blog-sidebar-item">
+        <a href="{{url}}">
+          <span class="blog-sidebar-link-title">{{title}}</span>
+
+          {{#if author}}
+            <span class="blog-sidebar-meta">
+              {{lang 'blog.posted_by' author=author}}
+            </span>
+          {{/if}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

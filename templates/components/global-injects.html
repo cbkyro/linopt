@@ -1,0 +1,54 @@
+{{inject 'themeImageSizes' theme_settings._images}}
+
+{{! Header }}
+{{inject 'headerNavMenu' (lang 'header.menu')}}
+{{inject 'headerNavClose' (lang 'header.close')}}
+{{inject 'headerNavSearch' (lang 'header.search')}}
+
+{{! Common --}}
+{{inject 'required' (lang 'common.required')}}
+{{inject 'selectState' (lang 'common.select_a_state')}}
+
+{{! Form Validation --}}
+{{inject 'validationRequired' (lang 'forms.validation.required')}}
+{{inject 'validationEmail' (lang 'forms.validation.email')}}
+{{inject 'validationNumber' (lang 'forms.validation.number')}}
+{{inject 'validationNumMax' (lang 'forms.validation.num_max')}}
+{{inject 'validationNumMin' (lang 'forms.validation.num_min')}}
+{{inject 'validationNumRange' (lang 'forms.validation.num_range')}}
+{{inject 'validationMaxLength' (lang 'forms.validation.max_length')}}
+{{inject 'validationMinLength' (lang 'forms.validation.min_length')}}
+{{inject 'validationMaxChecked' (lang 'forms.validation.max_checked')}}
+{{inject 'validationMinChecked' (lang 'forms.validation.min_checked')}}
+{{inject 'validationMaxSelected' (lang 'forms.validation.max_selected')}}
+{{inject 'validationMinSelected' (lang 'forms.validation.min_selected')}}
+{{inject 'validationNotEqual' (lang 'forms.validation.not_equal')}}
+{{inject 'validationDifferent' (lang 'forms.validation.different')}}
+
+{{! Products }}
+{{inject 'addSuccess' (lang 'product.success')}}
+{{inject 'addToCart' (lang 'product.add_to_cart')}}
+{{inject 'productYouSave' (lang 'product.you_save')}}
+{{inject 'productIncludingTax' (lang 'product.including_tax')}}
+{{inject 'productExcludingTax' (lang 'product.excluding_tax')}}
+{{inject 'cartLink' (lang 'product.cart_link')}}
+{{inject 'checkoutLink' (lang 'product.checkout_link')}}
+{{inject 'homeLink' (lang 'product.home_link')}}
+{{inject 'preOrder' (lang 'product.pre_order')}}
+{{inject 'soldOut' (lang 'product.product_item_actions.sold_out')}}
+{{inject 'urlsCart' urls.cart}}
+{{inject 'urlsCheckout' urls.checkout.single_address}}
+{{inject 'productsPerPage' theme_settings.products-per-page}}
+{{inject 'productImageZoom' theme_settings.product-images-enable-zoom}}
+{{inject 'disableProductAjax' theme_settings.product-purchase-disable-ajax}}
+
+{{! Collections (Brands/Category/Search}}
+{{inject 'compareProducts' (lang 'collections.compare.heading')}}
+{{inject 'compareItems' (lang 'collections.compare.items')}}
+{{inject 'compareOpen' (lang 'collections.compare.open_bar')}}
+{{inject 'compareClose' (lang 'collections.compare.close_bar')}}
+{{inject 'compareAdd' (lang 'collections.compare.close_bar')}}
+{{inject 'compareRemove' (lang 'collections.compare.remove_product')}}
+{{inject 'compareAdd' (lang 'collections.compare.add_product')}}
+{{inject 'searchHideForm' (lang 'search.hide_form')}}
+{{inject 'searchShowForm' (lang 'search.show_form')}}

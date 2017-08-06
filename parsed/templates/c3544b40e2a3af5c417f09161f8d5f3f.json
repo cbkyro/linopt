@@ -1,0 +1,1 @@
+{"components/cart/header":"<h1 class=\"cart-page-title\">\n  {{lang 'cart.title'}}\n  <span class=\"cart-total\">{{cart.grand_total.formatted}}</span>\n</h1>\n"}

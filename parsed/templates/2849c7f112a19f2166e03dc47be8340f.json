@@ -1,0 +1,1 @@
+{"components/common/compare/column-width":"\n{{#if number-of-comparisons '===' 1}}\n  row-of-1\n{{else if number-of-comparisons '===' 2}}\n  row-of-2\n{{else if number-of-comparisons '===' 3}}\n  row-of-3\n{{else if number-of-comparisons '>' 3}}\n  row-of-4\n{{/if}}\n"}

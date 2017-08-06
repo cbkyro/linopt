@@ -1,0 +1,20 @@
+
+<figure class="masthead-item" {{#if image}}style="background-image:url({{getImage image '1600x700'}});"{{/if}}>
+  {{#if image}}
+    <img class="masthead-item-image show-for-sr" src="{{getImage image '1600x700'}}" alt="{{image.alt}}"/>
+  {{/if}}
+
+  <figcaption class="layout-container">
+    <div class="masthead-item-info">
+      <div class="masthead-item-content {{#if image}}has-background-image{{/if}}">
+        {{#if heading}}
+          <h1 class="masthead-item-title">{{heading}}</h1>
+        {{/if}}
+
+        {{#if text}}
+          <div class="masthead-item-text rte" >{{{text}}}</div>
+        {{/if}}
+      </div>
+    </div>
+  </figcaption>
+</figure>

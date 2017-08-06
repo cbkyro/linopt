@@ -1,0 +1,37 @@
+<div class="product-slideshow {{#if product.images.length '>' 1}}visible-controls{{/if}}">
+  <div class="product-slideshow-images" data-slideshow-position="0" data-product-images>
+    {{#each product.images}}
+      <div class="product-slideshow-image" data-image-position="{{@index}}" data-product-images-main>
+        <img src="{{getImage this '1024'}}" alt="{{this.alt}}">
+
+        {{#if ../theme_settings.product-images-enable-zoom}}
+          <a href="{{getImage this '1024'}}" class="product-image-zoom">
+            <span class="show-for-sr">{{lang 'product.enlarge'}}</span>
+            <svg role="img"><use xlink:href="#icon-enlarge"></use></svg>
+          </a>
+        {{/if}}
+      </div>
+    {{/each}}
+
+    {{#if product.price.saved}}
+      <span class="product-single-sale-badge">{{lang 'product.product_item_actions.sale'}}</span>
+    {{/if}}
+
+    <span class="loading-spinner"></span>
+  </div>
+
+  {{#if product.images.length ">" 1}}
+    <div class="product-thumbnails">
+      {{#each product.images}}
+        <span
+          class="product-thumbnail {{#if @first}}active{{/if}}"
+          style="background-image: url({{getImage this '200'}});"
+          data-image-position="{{@index}}"
+          data-high-res="{{getImage this '1024'}}"
+          data-product-thumbnail>
+          <img class="show-for-sr" src="{{getImage this '200'}}" alt="{{this.alt}}">
+        </span>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

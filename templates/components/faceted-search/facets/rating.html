@@ -1,0 +1,13 @@
+<ul class="collection-facet-list" data-facet-filter-wrapper>
+  {{#each items}}
+    {{#if param_value}}
+      <li class="collection-facet-list-item {{#if selected}}is-active{{/if}}" data-facet-item>
+        <a href="{{#if remove_url}}{{remove_url}}{{else}}{{url}}{{/if}}" data-faceted-search-facet rel="nofollow">
+          {{> components/common/rating-stars rating=param_value star_size='medium'}}
+
+          {{#if ../../show_product_counts}}{{#if count}}<span data-facet-item-count>({{count}})</span>{{/if}}{{/if}}
+        </a>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>

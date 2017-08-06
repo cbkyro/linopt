@@ -1,0 +1,36 @@
+
+{{#partial "page"}}
+
+{{> components/breadcrumbs breadcrumbs}}
+
+<article class="module-page-container layout-container contact-page">
+  <header class="block-header">
+    <h1 class="page-title">
+      {{#if theme_settings.contact-show-store-name}}
+        {{lang 'contact_page.alt_heading' store-name=settings.store_name}}
+      {{else}}
+        {{page.title}}
+      {{/if}}
+    </h1>
+  </header>
+
+  <div class="block-content">
+    <div class="{{#unless forms.contact.success}}rte{{/unless}}">
+      {{#if forms.contact.success}}
+        {{> core/alerts/alert-success (lang 'contact.successful' shopPath=urls.home)}}
+      {{else}}
+        <p>{{{page.content}}}</p>
+      {{/if}}
+    </div>
+
+    {{#unless forms.contact.success}}
+      <div class="page-form">
+        {{> core/forms/form-contact-us}}
+      </div>
+    {{/unless}}
+  </div>
+</article>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,133 @@
+
+<div class="footer-column about-column">
+  <h1 class="footer-title">
+    {{lang 'footer.about.heading' store_name=settings.store_logo.title}}
+  </h1>
+
+  {{#if settings.address}}
+    <address class="footer-contact-address">{{nl2br settings.address}}</address>
+  {{/if}}
+
+  {{#if settings.phone_number.length}}
+    <p class="footer-contact-phone">{{settings.phone_number}}</p>
+  {{/if}}
+
+  <ul class="footer-social-icons">
+    {{#each social_media}}
+      <li>
+        {{#if display_name '===' 'google+'}}
+          <a href="{{url}}">
+            <svg class="footer-social-icon" role="img">
+              <use xlink:href="#icon-google"></use>
+            </svg>
+          </a>
+        {{else}}
+          <a href="{{url}}">
+            <svg class="footer-social-icon" role="img">
+              <use xlink:href="#icon-{{display_name}}"></use>
+            </svg>
+          </a>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<nav class="footer-column categories-column">
+  {{#unless theme_settings.alternate-layout-for-footer}}
+    <h2 class="footer-title">
+      {{lang 'footer.categories.heading'}}
+    </h2>
+  {{/unless}}
+
+  <ul class="footer-link-list">
+    {{#each categories}}
+      <li>
+        <a href="{{url}}">{{name}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</nav>
+
+<nav class="footer-column pages-column">
+  {{#unless theme_settings.alternate-layout-for-footer}}
+    <h2 class="footer-title">
+      {{lang 'footer.pages.heading'}}
+    </h2>
+  {{/unless}}
+
+  <ul class="footer-link-list">
+    {{#each pages}}
+      <li>
+        <a href="{{url}}">{{name}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</nav>
+
+<nav class="footer-column pages-column">
+  {{#unless theme_settings.alternate-layout-for-footer}}
+    <h2 class="footer-title">
+      {{lang 'footer.support.heading'}}
+    </h2>
+  {{/unless}}
+
+  <ul class="footer-link-list">
+    {{#if settings.account_creation_enabled}}
+      {{#unless customer.id}}
+        <li>
+          <a href="{{urls.auth.login}}">{{lang 'footer.support.support_links.sign_in'}}</a>
+        </li>
+      {{else}}
+        <li>
+          <a href="{{urls.account.index}}">{{lang 'footer.support.support_links.account'}}</a>
+        </li>
+        <li>
+          <a href="{{urls.auth.logout}}">{{lang 'footer.support.support_links.logout'}}</a>
+        </li>
+      {{/unless}}
+      {{#if settings.show_wishlist}}
+        <li>
+          <a href="{{urls.account.wishlists.all}}">{{lang 'footer.support.support_links.wishlists'}}</a>
+        </li>
+      {{/if}}
+    {{/if}}
+    {{#if customer.id}}
+      <li>
+        <a href="{{urls.account.returns}}">{{lang 'footer.support.support_links.returns'}}</a>
+      </li>
+    {{/if}}
+    {{#if settings.gift_certificates_enabled}}
+      <li>
+        <a href="{{urls.gift_certificate.purchase}}">{{lang 'footer.support.support_links.gift_certificates'}}</a>
+      </li>
+    {{/if}}
+    <li>
+      <a href="{{urls.sitemap}}">{{lang 'footer.support.support_links.sitemap'}}</a>
+    </li>
+  </ul>
+</nav>
+
+{{#unless theme_settings.alternate-layout-for-footer}}
+  {{#if shop_by_brand}}
+    <nav class="footer-column brands-column">
+      <h2 class="footer-title">
+        {{lang 'footer.brands.heading'}}
+      </h2>
+
+      <ul class="footer-link-list">
+        {{#each (limit shop_by_brand 5)}}
+          <li>
+            <a href="{{url}}">{{name}}</a>
+          </li>
+        {{/each}}
+
+        {{#if shop_by_brand.length '>' 5}}
+          <li class="footer-link-separation">
+            <a href="{{urls.brands}}">{{lang 'footer.brands.view_all'}}</a>
+          </li>
+        {{/if}}
+      </ul>
+    </nav>
+  {{/if}}
+{{/unless}}

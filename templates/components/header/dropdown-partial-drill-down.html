@@ -1,0 +1,11 @@
+
+<ul class="header-dropdown-menu">
+  {{#each categories}}
+    {{> components/header/link-partial-nested
+      this ul-class='header-dropdown-menu'
+      nested-li-class='dropdown-link-list-item'
+      li-class='dropdown-link-list-item'
+      submenu=true
+    }}
+  {{/each}}
+</ul>

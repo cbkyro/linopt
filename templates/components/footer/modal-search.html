@@ -1,0 +1,18 @@
+
+<div id="modal-search-form" class="search-modal-container" data-modal-search>
+  {{> components/common/modal-close href="modal-search-form" data="modal-search-close"}}
+
+  <div class="modal-body">
+    {{{snippet 'forms_search'}}}
+
+    <form class="modal-search" id="modal-search" action="{{urls.search}}" data-validated-form-search>
+      {{> core/forms/common/text prefill=(lang 'search.overlay_field') label=(lang 'search.overlay_field') name='search_query_adv' id='header_search_query' value=forms.search.query required=true}}
+      <button type="submit" class="modal-search-submit">
+        <svg class="modal-search-submit-icon" role="img">
+          <use xlink:href="#icon-search"></use>
+        </svg>
+        <span class="show-for-sr">{{lang 'search.submit'}}</span>
+      </button>
+    </form>
+  </div>
+</div>

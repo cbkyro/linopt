@@ -1,0 +1,17 @@
+<div class="cart-item-option">
+  <span class="cart-item-option-name">
+    {{name}}:
+  </span>
+
+  <span class="cart-item-option-value">
+    {{#if value '===' 'checked'}}
+      {{lang 'cart.checked'}}
+    {{else}}
+      {{#if is_file}}
+        <a href="/viewfile.php?prodfield={{../id}}&cartitem={{../../id}}">{{{value}}}</a>
+      {{else}}
+        {{value}}
+      {{/if}}
+    {{/if}}
+  </span>
+</div>

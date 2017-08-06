@@ -1,0 +1,7 @@
+<div class="rating-stars {{#if star_size}}{{star_size}}{{else}}small{{/if}}-stars" aria-hidden="true">
+  {{#for 1 5}}
+    <svg class="rating-star {{#if ../rating '>=' $index}}rating-star-full{{else}}rating-star-empty{{/if}}" role="presentation">
+      <use xlink:href="#icon-star"></use>
+    </svg>
+  {{/for}}
+</div>

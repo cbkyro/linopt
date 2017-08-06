@@ -1,0 +1,16 @@
+
+{{{snippet 'categories'}}}
+
+{{#if category.products}}
+  <form class="form" action="/compare" method="POST" data-compare-form>
+    {{#each category.products}}
+      {{> components/product/product-item this show_quickshop=true show_rating=../settings.show_product_rating show_compare=../category.show_compare default_image=../theme_settings.default_image}}
+    {{/each}}
+
+    {{#if category.show_compare}}
+      {{> components/common/collections/compare-bar}}
+    {{/if}}
+  </form>
+{{else}}
+  <p class="no-product-results">{{lang 'category.empty'}}</p>
+{{/if}}

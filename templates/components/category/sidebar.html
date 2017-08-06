@@ -1,0 +1,14 @@
+{{#if category.faceted_search_enabled}}
+  {{#each category.facets}}
+    {{#if partial '!==' 'range'}}
+      {{#if items}}
+        {{> components/faceted-search/facets-base}}
+      {{/if}}
+    {{else}}
+      {{> components/faceted-search/facets-base}}
+    {{/if}}
+  {{/each}}
+{{else}}
+  {{> components/common/collections/shop-by-brand }}
+  {{> components/common/collections/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+{{/if}}

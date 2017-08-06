@@ -1,0 +1,104 @@
+<div class="header-dropdown dropdown-quick-cart {{#unless cart.items}}quick-cart-empty{{/unless}}" data-quick-cart-content data-dropdown-menu data-cart-count="{{cart.items.length}}">
+  <section class="dropdown-column dropdown-column-quick-cart">
+    {{#if cart.items}}
+      {{#each cart.items}}
+        <div class="quick-cart-item" data-quick-cart-item data-item-id="{{id}}">
+          <div class="quick-cart-item-image-wrapper">
+            <a class="quick-cart-item-image" href="{{url}}" title="{{name}}" style="background-image: url({{getImage image '200' (cdn ../theme_settings.default_image)}})">
+              {{#if image}}
+                <img src="{{getImage image '200'}}" alt="{{image.alt}}">
+              {{/if}}
+            </a>
+          </div>
+
+          <div class="quick-cart-item-details">
+            <h1 class="quick-cart-item-title">
+              <a href="{{url}}">
+                {{{name}}} <span class="quick-cart-item-quantity">&times; {{quantity}}</span>
+              </a>
+            </h1>
+
+            {{#if brand.name '!==' ''}}
+              <span class="quick-cart-item-brand">{{brand.name}}</span>
+            {{/if}}
+
+            <span class="quick-cart-item-price">{{price.formatted}}</span>
+          </div>
+
+          <div class="quick-cart-item-remove-wrapper">
+            <a href="{{remove_url}}" class="quick-cart-item-remove" data-quick-cart-item-remove title="{{lang 'cart.quick_cart.remove'}}">
+              <svg role="presentation">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      {{/each}}
+
+      <div class="quick-cart-totals">
+        {{#if cart.sub_total.value '!==' cart.grand_total.value}}
+          <div class="cart-total-item">
+            <span class="cart-total-item-label">
+              {{lang 'cart.quick_cart.sub_total'}}
+            </span>
+            <span class="cart-total-item-value">
+               {{cart.sub_total.formatted}}
+            </span>
+          </div>
+        {{/if}}
+
+        {{#if cart.taxes}}
+          {{#each cart.taxes}}
+            <div class="cart-total-item">
+              <span class="cart-total-item-label">
+                {{lang 'cart.quick_cart.additional_cost' name=name}}
+              </span>
+              <span class="cart-total-item-value">
+                {{cost.formatted}}
+              </span>
+            </div>
+          {{/each}}
+        {{/if}}
+
+        {{#if cart.shipping_handling.shipping_cost}}
+          {{#if cart.shipping_handling.provider}}
+            <div class="cart-total-item">
+              <span class="cart-total-item-label">
+                {{lang 'cart.quick_cart.additional_cost' name=cart.shipping_handling.provider.description}}
+              </span>
+              <span class="cart-total-item-value">
+                 {{cart.shipping_handling.shipping_cost.formatted}}
+              </span>
+            </div>
+          {{/if}}
+        {{/if}}
+        <div class="cart-total-item">
+          <span class="cart-total-item-label">
+            {{lang 'cart.quick_cart.total'}}
+          </span>
+          <span class="cart-total-item-value">
+             {{cart.grand_total.formatted}}
+          </span>
+        </div>
+      </div>
+
+      <footer class="quick-cart-footer">
+        <div class="quick-cart-footer-cell">
+          <a href="{{urls.cart}}" class="button secondary button-wide button-large">
+            {{lang 'cart.quick_cart.view_cart'}}
+          </a>
+        </div>
+
+        <div class="quick-cart-footer-cell">
+          <a href="{{urls.checkout.single_address}}" class="button button-wide button-large">
+            {{lang 'cart.quick_cart.checkout'}}
+          </a>
+        </div>
+      </footer>
+    {{else}}
+      <span class="quick-cart-empty">
+        {{lang 'cart.quick_cart.empty'}}
+      </span>
+    {{/if}}
+  </section>
+</div>

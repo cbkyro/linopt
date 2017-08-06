@@ -1,0 +1,42 @@
+{{inject 'couponCodeEmptyInput' (lang 'cart.coupon_codes.error')}}
+
+<div class="cart-total-coupon-codes" data-coupon-codes>
+  <div>
+    <h4 class="cart-totals-heading">
+      {{lang 'cart.coupon_codes.coupon_code'}}
+
+      <span class="cart-totals-toggle" data-coupon-code-toggle="{{lang 'cart.coupon_codes.add_code'}}" data-coupon-code-cancel="{{lang 'cart.coupon_codes.cancel'}}">
+        <svg role="presentation"><use xlink:href="#icon-increment-regular"></use></svg>
+        <span class="cart-totals-toggle-label" data-coupon-code-toggle-label>
+          {{lang 'cart.coupon_codes.add_code'}}
+        </span>
+      </span>
+    </h4>
+
+    {{#if cart.coupons}}
+      {{#each cart.coupons}}
+        <p class="coupon-item-applied">
+          {{lang 'cart.coupon_codes.label' code=code}}
+          {{discount.formatted}}
+          (<a href="{{remove_url}}">{{lang 'cart.coupon_codes.remove'}}</a> / <a href="#" data-coupon-code-toggle>{{lang 'cart.coupon_codes.change_code'}}</a>)
+        </p>
+      {{/each}}
+    {{/if}}
+
+    <form class="form" method="post" action="{{urls.cart}}" data-coupon-code-form>
+      <div class="form-field form-icon-inline">
+        <label class="form-label" for="couponcode">
+          <span class="form-label-text">{{lang 'cart.coupon_codes.enter_code'}}</span>
+          <input class="form-input" id="couponcode" type="text" name="couponcode" value="" placeholder="{{lang 'cart.coupon_codes.enter_code'}}" data-coupon-code-input>
+        </label>
+
+        <input type="hidden" name="action" value="applycoupon">
+
+        <button class="form-icon-button" type="submit">
+          <svg role="presentation"><use xlink:href="#icon-chevron-right"></use></svg>
+        </button>
+      </div>
+    </form>
+    <div data-coupon-errors></div>
+  </div>
+</div>

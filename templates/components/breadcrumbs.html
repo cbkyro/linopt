@@ -1,0 +1,26 @@
+
+{{#if this.length '>' 2}}
+  <div class="layout-container">
+    <ol class="page-breadcrumbs">
+      {{#each this}}
+        <li class="breadcrumb-item">
+          {{#unless @first}}
+            {{# if name}}
+              <span class="breadcrumb-separator">/</span>
+            {{/if}}
+          {{/unless}}
+
+          {{#all url name}}
+            <a class="breadcrumb-label breadcrumb-link" href="{{url}}">
+              <span>{{name}}</span>
+            </a>
+          {{else}}
+            {{# if name}}
+              <span class="breadcrumb-label {{#if @last}}is-active{{/if}}">{{{limit name 1500}}}{{#if name.length '>' 150}}&hellip;{{/if}}</span>
+            {{/if}}
+          {{/all}}
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+{{/if}}

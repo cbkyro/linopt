@@ -1,0 +1,18 @@
+
+{{#partial "page"}}
+
+  <article class="page-container giftcard-page">
+    <header class="block-header">
+      <h1 class="page-title">{{lang 'core.giftcard.heading'}}</h1>
+    </header>
+    <div class="block-content">
+      <div class="page-content">
+        {{> components/gift-certificate/navigation page='redeem'}}
+        {{> core/gift-certificate/redeem}}
+      </div>
+    </div>
+  </article>
+
+{{/partial}}
+
+{{> layout/base}}

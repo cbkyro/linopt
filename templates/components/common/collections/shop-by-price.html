@@ -1,0 +1,20 @@
+
+{{#if shop_by_price}}
+  <div class="collection-facet">
+    <h1 class="collection-inside-column-heading">
+      {{lang 'collections.shop_by.price'}}
+    </h1>
+    <ul class="collection-facet-list">
+      {{#each shop_by_price}}
+        <li class="collection-facet-list-item {{#if selected}}is-active{{/if}}">
+          <a
+            data-faceted-search-facet
+            href="{{#if selected}}{{../../category_url}}{{else}}{{url}}{{/if}}"
+            title="{{low.formatted}} - {{high.formatted}}">
+            {{low.formatted}} - {{high.formatted}}
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}

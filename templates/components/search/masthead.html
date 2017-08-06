@@ -1,0 +1,26 @@
+
+<section class="masthead-item masthead-search">
+  <div class="layout-container">
+    <div class="masthead-item-info">
+      <div class="masthead-item-content">
+        <h1 class="masthead-search-title">
+          {{#if result_count}}
+            {{lang 'search.results_query'}} <strong>"{{forms.search.query}}"</strong>
+          {{else}}
+            {{lang 'search.title'}}
+          {{/if}}
+        </h1>
+
+        <form class="masthead-search-form" id="masthead-search" action="{{urls.search}}" data-validated-form data-masthead-form>
+          {{> core/forms/common/text prefill=(lang 'search.overlay_field') label=(lang 'search.overlay_field') name='search_query_adv' id='masthead_search_query' value=forms.search.query required=true}}
+          <button type="submit" class="masthead-search-submit">
+            <svg class="masthead-search-submit-icon" role="img">
+              <use xlink:href="#icon-search"></use>
+            </svg>
+            <span class="show-for-sr">{{lang 'search.submit'}}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

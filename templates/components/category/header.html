@@ -1,0 +1,16 @@
+
+{{#if category.subcategories}}
+  <div class="collection-navigation-list">
+    {{> components/category/category-menu}}
+  </div>
+{{/if}}
+
+<div class="collection-sortby">
+    {{#if theme_settings.collection-enable-filters}}
+      {{> components/faceted-search/facets-toggle}}
+    {{/if}}
+      
+    {{#if category.products}}
+      {{> components/common/collections/sort-by sort=pagination.category.sort}}
+    {{/if}}
+</div>

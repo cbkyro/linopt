@@ -1,0 +1,12 @@
+
+{{#if show_more_toggle}}
+  <div class="collection-facet-list-item collection-facet-list-separation" data-facet-more>
+    <button
+      class="collection-facet-list-toggle"
+      role="button"
+      data-additional-facets="{{facet}}">
+      <span>{{lang 'faceted_search.show_more'}}</span>
+      <span class="hidden">{{lang 'faceted_search.show_less'}}</span>
+    </button>
+  </div>
+{{/if}}

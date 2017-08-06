@@ -1,0 +1,19 @@
+
+<div class="form-field form-field-select currency-selector" data-currency-selector>
+  <label class="form-label">
+    <span class="form-field-control">
+      <span class="form-select-wrapper">
+        <span class="form-selected-text">
+          {{{currency_selector.active_currency_code}}} 
+        </span>
+        <select>
+          {{#each currency_selector.currencies}}
+            <option value="{{{switch_url}}}" {{#if is_active}}selected{{/if}}>
+              {{name}}
+            </option>
+          {{/each}}
+        </select>
+      </span>
+    </span>
+  </label>
+</div>

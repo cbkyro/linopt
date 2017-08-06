@@ -1,0 +1,14 @@
+
+{{#if grid}}
+  <section class="products-new {{theme_settings.background-for-new-products}}">
+    <div class="layout-container">
+      <h1 class="section-title">{{lang 'product.product_blocks.new_products.heading'}}</h1>
+
+      <div class="product-grid">
+        {{#each grid}}
+          {{> components/product/product-item this show_quickshop=true show_rating=true default_image=../default_image}}
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{/if}}

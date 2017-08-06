@@ -1,0 +1,1 @@
+{"components/common/compare/remove":"\n{{#if number-of-comparisons '>' 2}}\n  <div class=\"comparison-item-remove {{#if class}}{{class}}{{/if}}\">\n    <a href=\"{{remove_url}}\">{{lang 'compare.remove_item'}}</a>\n  </div>\n{{/if}}\n"}

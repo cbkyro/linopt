@@ -1,0 +1,57 @@
+<form class='collections-sort-by-form' method="get" data-sort-by>
+  <span class="form-field form-inline">
+    <label class="form-label select-wrapper" for="sort">
+      <span class="form-select-wrapper">
+        <span class="form-selected-text">
+          {{#unless sort}}
+            {{lang 'collections.sort_by.select_sorting'}}
+          {{else}}
+            {{lang 'collections.sort_by.heading'}}
+          {{/unless}}
+          {{#if sort "===" "featured"}}
+            {{lang 'collections.sort_by.featured'}}
+          {{/if}}
+          {{#if sort "===" "newest"}}
+            {{lang 'collections.sort_by.newest'}}
+          {{/if}}
+          {{#if sort "===" "bestselling"}}
+            {{lang 'collections.sort_by.popular'}}
+          {{/if}}
+          {{#if sort "===" "alphaasc"}}
+            {{lang 'collections.sort_by.alpha_asc'}}
+          {{/if}}
+          {{#if sort "===" "alphadesc"}}
+            {{lang 'collections.sort_by.alpha_desc'}}
+          {{/if}}
+          {{#if sort "===" "avgcustomerreview"}}
+            {{lang 'collections.sort_by.rating'}}
+          {{/if}}
+          {{#if sort "===" "priceasc"}}
+            {{lang 'collections.sort_by.price_asc'}}
+          {{/if}}
+          {{#if sort "===" "pricedesc"}}
+            {{lang 'collections.sort_by.price_desc'}}
+          {{/if}}
+          {{#if sort "===" "relevance"}}
+            {{lang 'collections.sort_by.relevance'}}
+          {{/if}}
+        </span>
+
+        <select class="form-input input-select" name="sort" id="sort">
+          <option {{#unless sort}}selected{{/unless}} disabled>{{lang 'collections.sort_by.select_sorting'}}</option>
+          <option value="featured" {{#if sort "===" "featured"}}selected{{/if}}>{{lang 'collections.sort_by.featured'}}</option>
+          <option value="newest" {{#if sort "===" "newest"}}selected{{/if}}>{{lang 'collections.sort_by.newest'}}</option>
+          <option value="bestselling" {{#if sort "===" "bestselling"}}selected{{/if}}>{{lang 'collections.sort_by.popular'}}</option>
+          <option value="alphaasc" {{#if sort "===" "alphaasc"}}selected{{/if}}>{{lang 'collections.sort_by.alpha_asc'}}</option>
+          <option value="alphadesc" {{#if sort "===" "alphadesc"}}selected{{/if}}>{{lang 'collections.sort_by.alpha_desc'}}</option>
+          <option value="avgcustomerreview" {{#if sort "===" "avgcustomerreview"}}selected{{/if}}>{{lang 'collections.sort_by.rating'}}</option>
+          <option value="priceasc" {{#if sort "===" "priceasc"}}selected{{/if}}>{{lang 'collections.sort_by.price_asc'}}</option>
+          <option value="pricedesc" {{#if sort "===" "pricedesc"}}selected{{/if}}>{{lang 'collections.sort_by.price_desc'}}</option>
+          {{#if result_count}}
+            <option value="relevance" {{#if sort "===" "relevance"}}selected{{/if}}>{{lang 'collections.sort_by.relevance'}}</option>
+          {{/if}}
+        </select>
+      </span>
+    </label>
+    </span>
+</form>

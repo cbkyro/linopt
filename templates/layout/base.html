@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="{{ locale_name }}">
+<head>
+
+  <title>{{head.title}}</title>
+
+  {{{head.meta_tags}}}
+  {{{head.config}}}
+
+  <link href="{{head.favicon}}" rel="shortcut icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  {{{stylesheet '/assets/css/theme.css'}}}
+  {{ getFontsCollection }}
+
+  {{{head.scripts}}}
+  {{{head.rsslinks}}}
+
+  {{> components/global-injects}}
+  {{{snippet 'html_head'}}}
+</head>
+
+<body class="{{> components/common/body-class}}">
+  <div class="icon-sprite">{{> components/common/icons/sprite}}</div>
+
+  {{#if page_type '===' 'product'}}
+    {{> components/common/facebook-like}}
+  {{else if page_type '===' 'blog_post'}}
+    {{> components/common/facebook-like}}
+  {{/if}}
+
+  {{{snippet 'header'}}}
+
+  {{> components/header}}
+
+  {{#block "masthead"}}{{/block}}
+
+  <main class="main-content">
+    <div class="main-alert {{> components/page-message/toggle-show}}" data-page-message>
+      {{> components/page-message/product-stock}}
+      {{> components/page-message/review}}
+      {{> components/page-message/contact-us}}
+      {{> components/page-message/shipping}}
+    </div>
+
+    {{#block "page"}}{{/block}}
+  </main>
+
+  {{> components/footer}}
+
+  <div class="footer-modals-wrapper">
+    {{> components/footer/modal-search}}
+    {{#block "footer-modal"}}{{/block}}
+  </div>
+
+   <script>
+    function startupApp(stencilBootstrap) {
+      stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+    }
+  </script>
+
+  <script src="{{cdn '/assets/js/bundle.js'}}"></script>
+  <script>
+    // Exported in app.js
+    window.stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+  </script>
+  {{{footer.scripts}}}
+
+  {{{snippet 'footer'}}}
+
+  {{> core/structured-data/website}}
+  {{> core/structured-data/breadcrumbs}}
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+{{#if links.length}}
+  <div class="pagination">
+    {{#if previous}}
+      <div class="pagination-item pagination-previous">
+        <a class="pagination-page"  href="{{previous}}">
+          <svg class="pagination-icon" role="img"><use xlink:href="#icon-arrow"></use></svg>
+          {{lang 'pagination.previous'}}
+        </a>
+      </div>
+    {{else}}
+      <div class="pagination-item pagination-empty">&nbsp;{{!-- Placeholder for spacing --}}</div>
+    {{/if}}
+
+    <div class="pagination-item pagination-count">
+      <ul class="pagination-links">
+        {{#each links}}
+          <li class="pagination-link-item">
+            <a {{#if number '==' ../current}}class="active" {{else}}href="{{url}}"{{/if}}>
+              {{number}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    {{#if next}}
+      <div class="pagination-item pagination-next">
+        <a class="pagination-page" href="{{next}}">
+          {{lang 'pagination.next'}}
+          <svg class="pagination-icon" role="img"><use xlink:href="#icon-arrow"></use></svg>
+        </a>
+      </div>
+    {{else}}
+      <div class="pagination-item pagination-empty">&nbsp;{{!-- Placeholder for spacing --}}</div>
+    {{/if}}
+  </div>
+{{/if}}

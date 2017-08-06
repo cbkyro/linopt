@@ -1,0 +1,10 @@
+
+<li {{#if li-class}}class="{{li-class}}"{{/if}}>
+  <a href="{{url}}">{{name}}</a>
+</li>
+
+{{#if children}}
+  {{#each children}}
+    {{> components/header/link-partial this li-class=../li-class}}
+  {{/each}}
+{{/if}}

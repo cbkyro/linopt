@@ -1,0 +1,19 @@
+<form class="form">
+  <div class="modal-form-contents">
+    {{#if quotes.shipping_methods}}
+      {{#each quotes.shipping_methods}}
+        {{> components/cart/shipping-quote}}
+      {{/each}}
+    {{/if}}
+
+    {{#if quotes.ups_shipping_methods}}
+      {{#each quotes.ups_shipping_methods}}
+        {{> components/cart/shipping-quote provider_name=(concat provider_name (concat ": " description))}}
+      {{/each}}
+    {{/if}}
+  </div>
+
+  <div class="modal-footer">
+    <input class="button" type="submit" value="{{lang 'cart.shipping_calculator.select'}}">
+  </div>
+</form>

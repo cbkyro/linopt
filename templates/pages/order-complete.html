@@ -1,0 +1,19 @@
+
+{{#partial "page"}}
+
+{{> components/breadcrumbs breadcrumbs}}
+
+<article class="page-container order-page">
+  <header class="page-header layout-container">
+    <h1 class="page-title">{{lang 'order_complete.heading'}}</h1>
+  </header>
+  <div class="page-content layout-container rte">
+    <p>{{lang 'order_complete.message'}}</p>
+
+    {{{snippet 'order_confirmation'}}}
+  </div>
+</article>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,12 @@
+<article class="product-column-row review-item">
+  <header class="review-item-header">
+    <h5 class="review-item-title">{{title}}</h5>
+    {{#if show_product_rating}}
+      <div class="review-item-stars">
+        {{> components/common/rating-stars rating=rating star_size="medium"}}
+        <span class="review-item-score">{{lang 'product.reviews.stars_count' NUM=rating}}</span>
+      </div>
+    {{/if}}
+  </header>
+  <p class="review-item-body">{{text}}</p>
+</article>
